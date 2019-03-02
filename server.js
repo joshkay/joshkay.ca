@@ -13,6 +13,7 @@ const server = express();
 const route = pathMatch();
 
 server.use('/_next', express.static(path.join(__dirname, '.next')));
+server.use('/static', express.static(path.join(__dirname, 'static')));
 
 server.get('/', (req, res) => app.render(req, res, '/'));
 server.get('/cats', (req, res) => app.render(req, res, '/cats'));

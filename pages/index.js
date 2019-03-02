@@ -2,6 +2,8 @@ import React from 'react';
 import Default from '../layouts/default';
 import axios from 'axios';
 
+import '../scss/styles.scss';
+
 const meta = { title: 'Index title', description: 'Index description' };
 
 class IndexPage extends React.Component
@@ -45,7 +47,7 @@ class IndexPage extends React.Component
     return (
       <Default meta={meta}>
         <div>
-          <h1>Josh is hard at work...</h1>
+          <h1 className="example">Josh is hard at work...</h1>
           
           <h3>Kitty!</h3>
           <img src={this.state.cat.url} alt='Cat' />

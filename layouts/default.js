@@ -1,11 +1,14 @@
 import React from 'react';
-import Meta from '../components/meta'
-import Navbar from '../components/navbar'
+import Head from 'next/head';
+import Navbar from '../components/navbar';
 
 export default ({ children, meta }) =>
 (
   <div>
-    <Meta props={meta} />
+     <Head>
+      <title>Josh Kay</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    </Head>
     <Navbar />
     {
       children
