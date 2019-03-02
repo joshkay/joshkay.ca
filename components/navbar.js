@@ -8,7 +8,7 @@ export default () =>
       <span>
         <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="/static/profile.png" alt="" />
       </span>
-      <span className="d-lg-none">Josh Kay</span>
+      <span className="d-lg-none navbar-name">Josh Kay</span>
     </a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -19,19 +19,10 @@ export default () =>
           <a className="nav-link js-scroll-trigger" href="#about">About</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link js-scroll-trigger" href="#education">Education</a>
+          <a className="nav-link js-scroll-trigger" href="#skills">Portfolio</a>
         </li>
         <li className="nav-item">
           <a className="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link js-scroll-trigger" href="#awards">Awards</a>
         </li>
       </ul>
     </div>

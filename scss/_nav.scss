@@ -22,11 +22,16 @@
     flex-direction: row;
 
     .navbar-brand {
+      padding: 0rem;
+
       .img-profile {
-        padding-left: 10;
-        max-width: 3rem;
-        max-height: 3rem;
-        border: 0.1rem solid fade-out($white, 0.8);
+        margin: 0 !important;
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+        border: 0.05rem solid fade-out($white, 0.8);
+      }
+      .navbar-name {
+        padding-left: 1rem;
       }
     }
   }
