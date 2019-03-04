@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "next build && sls offline",
+    "start": "next",
+    "offline": "next build && sls offline",
     "build": "next build",
     "deploy": "next build && sls deploy"
   },
@@ -12,6 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
@@ -22,6 +27,7 @@
     "path-match": "^1.2.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "reactstrap": "^7.1.0",
     "serverless": "^1.38.0",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-domain-manager": "^2.6.13",

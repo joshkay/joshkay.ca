@@ -72,9 +72,15 @@ p.lead {
 
 .dev-icons {
   font-size: 3rem;
-  .list-inline-item i {
+  .list-inline-item svg {
     &:hover {
       color: $primary;
     }
+  }
+}
+
+.dev-workflow {
+  svg {
+    margin-right: 1rem; 
   }
 }

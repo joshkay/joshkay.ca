@@ -11,7 +11,7 @@
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 992px) {
   .navbar {
     text-align: center;
     position: fixed;
@@ -22,7 +22,11 @@
     flex-direction: row;
 
     .navbar-brand {
-      padding: 0rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      padding: 0;
 
       .img-profile {
         margin: 0 !important;
@@ -31,6 +35,9 @@
         border: 0.05rem solid fade-out($white, 0.8);
       }
       .navbar-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding-left: 1rem;
       }
     }
@@ -51,6 +58,7 @@
     height: 100vh;
     .navbar-brand {
       display: flex;
+      flex-direction: column;
 
       margin: auto auto 0;
       padding: 0.5rem;
@@ -58,6 +66,9 @@
         max-width: 10rem;
         max-height: 10rem;
         border: 0.5rem solid fade-out($white, 0.8);
+      }
+      .navbar-name {
+        font-size: 2rem;
       }
     }
     .navbar-collapse {
