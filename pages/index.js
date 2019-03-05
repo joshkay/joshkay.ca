@@ -26,6 +26,78 @@ class IndexPage extends React.Component
   constructor(props)
   {
     super(props);
+
+    this.state = {
+      visibleSections: new Array(this.getSections().length)
+    };
+
+    this.handleSectionEnter = this.handleSectionEnter.bind(this);
+    this.handleSectionLeave = this.handleSectionLeave.bind(this);
+    this.getFocusedSection = this.getFocusedSection.bind(this);
+  }
+
+  handleSectionEnter(section)
+  {
+    this.setState((prevState) =>
+    {
+      let { visibleSections } = prevState;
+      visibleSections[section.number] = section.id;
+      
+      return {
+        visibleSections
+      };
+    });
+  }
+
+  handleSectionLeave(section)
+  {
+    this.setState((prevState) =>
+    {
+      let { visibleSections } = prevState;
+      visibleSections[section.number] = undefined;
+      
+      return {
+        visibleSections
+      };
+    });
+  }
+
+  getFocusedSection()
+  {
+    const { visibleSections } = this.state;
+    if (visibleSections !== undefined)
+    {
+      for (let i = 0; i < visibleSections.length; i++)
+      {
+        const id = visibleSections[i];
+        if (id !== undefined)
+        {
+          return id;
+        }
+      }
+    }
+  }
+
+  getSections()
+  {
+    return [
+      {
+        id: 'about',
+        name: 'About'
+      },
+      {
+        id: 'experience',
+        name: 'Experience'
+      },
+      {
+        id: 'education',
+        name: 'Education'
+      },
+      {
+        id: 'skills',
+        name: 'Skills'
+      }
+    ];
   }
 
   render()
@@ -122,11 +194,17 @@ class IndexPage extends React.Component
         description={educationEntry.description}
         dates={educationEntry.dates}
       />
-    })
+    });
+
+    const sections = this.getSections();
 
     return (
-      <Default name={name} image="/static/profile.png">
-        <ProfileSection id="about">
+      <Default name={name} image="/static/profile.png" sections={sections}
+        focusedSection={this.getFocusedSection()}>
+
+        <ProfileSection id={sections[0].id} number={0}
+          handleSectionEnter={this.handleSectionEnter}
+          handleSectionLeave={this.handleSectionLeave}>
           <h1 className="mb-0">{`${firstName} `}
             <span className="text-primary">{lastName}</span>
           </h1>
@@ -149,7 +227,9 @@ class IndexPage extends React.Component
 
         <ProfileSectionSeparator />
 
-        <ProfileSection heading="Experience" id="experience">
+        <ProfileSection heading="Experience" id={sections[1].id} number={1}
+          handleSectionEnter={this.handleSectionEnter}
+          handleSectionLeave={this.handleSectionLeave}>
         {
           experienceList
         }
@@ -157,7 +237,9 @@ class IndexPage extends React.Component
 
         <ProfileSectionSeparator />
 
-        <ProfileSection heading="Education" id="education">
+        <ProfileSection heading="Education" id={sections[2].id} number={2}
+          handleSectionEnter={this.handleSectionEnter}
+          handleSectionLeave={this.handleSectionLeave}>
         {
           educationList
         }
@@ -165,7 +247,9 @@ class IndexPage extends React.Component
 
         <ProfileSectionSeparator />
 
-        <ProfileSection heading="Skills" id="skills">
+        <ProfileSection heading="Skills" id={sections[3].id} number={3}
+          handleSectionEnter={this.handleSectionEnter}
+          handleSectionLeave={this.handleSectionLeave}>
           <SkillsListing
             software={software}
             workflow={workflow}

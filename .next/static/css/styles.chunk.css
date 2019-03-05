@@ -7090,8 +7090,10 @@ p.lead {
   .dev-icons .list-inline-item svg:hover {
     color: #003E7E; }
 
-.dev-workflow svg {
-  margin-right: 1rem; }
+.dev-workflow {
+  margin-left: 1rem !important; }
+  .dev-workflow svg {
+    margin-right: 1rem; }
 
 .navbar .navbar-nav .nav-item .nav-link {
   font-weight: 800;

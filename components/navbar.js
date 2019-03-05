@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from 'react-scroll';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class ProfileNavbar extends React.Component
@@ -23,35 +23,42 @@ export default class ProfileNavbar extends React.Component
 
   render()
   {
-    const { name, image } = this.props;
+    const { name, image, sections, focusedSection } = this.props;
+
+    const navItems = sections.map((section, index) =>
+    {
+      let activeClass = '';
+      if (section.id === focusedSection)
+      {
+        activeClass = 'active';
+      }
+
+      return (
+        <NavItem key={index}>
+          <Link to={section.id} href=""
+            className={`nav-link ${activeClass}`} smooth={true}
+            hashSpy={true} duration={500}>
+            {section.name}
+          </Link>
+        </NavItem>
+      );
+    });
 
     return (
       <div>
         <Navbar expand="lg" fixed="top" dark className="bg-primary">
-          <NavbarBrand href="/" className="mr-auto">
+          <Link to="about" href=""
+            className="navbar-brand mr-auto" smooth={true}
+            hashSpy={true} duration={500}>
             <span>
               <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src={image} alt="" />
             </span>
             <span className="navbar-name">{name}</span>
-          </NavbarBrand>
+          </Link>
           <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
-              <NavItem>
-                <NavLink href="#about">About</NavLink>
-              </NavItem>
-              {/* <NavItem>
-                <NavLink href="#portfolio">Portfolio</NavLink>
-              </NavItem> */}
-              <NavItem>
-                <NavLink href="#experience">Experience</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#education">Education</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#skills">Skils</NavLink>
-              </NavItem>
+              {navItems}
             </Nav>
           </Collapse>
         </Navbar>
