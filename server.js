@@ -12,16 +12,16 @@ const handle = app.getRequestHandler();
 const server = express();
 const route = pathMatch();
 
+//if (!dev)
+{
+  const compression = require('compression');
+  server.use(compression());
+}
+
 server.use('/_next', express.static(path.join(__dirname, '.next')));
 server.use('/static', express.static(path.join(__dirname, 'static')));
 
 server.get('/', (req, res) => app.render(req, res, '/'));
-server.get('/cats', (req, res) => app.render(req, res, '/cats'));
-server.get('/cats/:breed', (req, res) =>
-{
-  const params = route('/cats/:breed')(parse(req.url).pathname);
-  return app.render(req, res, '/cats/_breed', params);
-});
 
 server.get('*', (req, res) => handle(req, res));
 
