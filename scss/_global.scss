@@ -72,7 +72,19 @@ p.lead {
 
 .dev-icons {
   font-size: 3rem;
-  .list-inline-item svg {
+  .list-inline-item {
+    width: 90px;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+  }
+  img, svg {
+    height: 0.875em;
+    width: auto !important;
+    vertical-align: middle;
+    border-style: none;
+
     &:hover {
       color: $primary;
     }

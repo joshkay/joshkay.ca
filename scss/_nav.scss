@@ -4,6 +4,9 @@
     letter-spacing: 0.05rem;
     text-transform: uppercase;
   }
+  .nav-item a, .nav-item a:hover {
+    text-decoration: none;
+  }
   .navbar-toggler {
     &:focus {
       outline-color: lighten($primary, 15%);

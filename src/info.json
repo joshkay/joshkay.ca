@@ -1,0 +1,120 @@
+{
+  "firstName": "Josh",
+  "lastName": "Kay",
+  "sections": [
+    {
+      "id": "about",
+      "name": "About",
+      "header": false,
+      "info": {
+        "email": "me@joshkay.ca",
+        "phoneNumber": "(416) 464-4510",
+        "description": "I am a web developer who has a passion for creating easy to use software.",
+        "github": "https://github.com/joshkay",
+        "linkedIn": "https://www.linkedin.com/in/joshmkay",
+        "twitter": "https://twitter.com/joshmkay"
+      }
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio",
+      "header": true,
+      "items": [
+        {
+          "name": "Music Box",
+          "image": "/static/images/portfolio/musicbox.png",
+          "description": "A simple way to listen to music at home or on the go. Fully responsive design makes it easy to use on mobile.",
+          "tools":
+          [
+            "React",
+            "Firebase"          
+          ],
+          "githubUrl": "https://github.com/joshkay/musicbox",
+          "siteUrl": "https://musicbox-joshkay.firebaseapp.com/"
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "name": "Experience",
+      "header": true,
+      "items": [
+        {
+          "title": "Contractor",
+          "company": "MARCOMM Integrated Business Solutions",
+          "description": "",
+          "dates": "Apr 2018 - Present"
+        },
+        {
+          "title": "Executive Vice President",
+          "company": "Hailstone Games",
+          "description": "",
+          "dates": "Jan 2017 - Apr 2018"
+        },
+        {
+          "title": "Software Engineer",
+          "company": "OSnap! Games",
+          "description": "",
+          "dates": "Jan 2015 - Jan 2017"
+        },
+        {
+          "title": "Contractor",
+          "company": "MARCOMM Integrated Business Solutions",
+          "description": "Contracted by Apotex Inc. to develop web software that managed data centers, cabling, work orders, inventory and more.  Worked with SQL, VB, and ASP.NET. ",
+          "dates": "May 2011 - Dec 2012"
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education",
+      "header": true,
+      "items": [
+        {
+          "title": "Bloc",
+          "company": "Full Stack Web Development Certification",
+          "description": "",
+          "dates": "Apr 2018 - Apr 2019"
+        },
+        {
+          "title": "George Brown College",
+          "company": "Game Programming Diploma",
+          "description": "With Honours",
+          "dates": "Jan 2013 - Apr 2016"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "Skills",
+      "header": true,
+      "info": {
+        "languages": [
+          "Javascript",
+          "Typescript",
+          "HTML5",
+          "CSS3",
+          "SASS",
+          "SQL",
+          "Java",
+          "C#",
+          "C++",
+          "Python"
+        ],
+        "libraries": [
+          "React"
+        ],
+        "workflow": [
+          "Test Driven Development",
+          "Mobile-First, Responsive Design",
+          "Agile Development & Scrum"
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "header": true
+    }
+  ]
+}

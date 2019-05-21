@@ -1,0 +1,13 @@
+.alert {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @media (min-width: 992px) {
+    left: $sidebar-base-width;
+  }
+}

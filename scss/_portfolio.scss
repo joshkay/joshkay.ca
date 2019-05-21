@@ -1,0 +1,25 @@
+.portfolio-item-links {
+  .social-icons {
+    padding-left: 1.25rem;
+
+    a {
+      width: 2.5rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.portfolio-icon
+{
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  object, svg, img {
+    display: flex;
+    width: 100% !important;
+    height: 100%;
+  }
+}

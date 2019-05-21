@@ -1,16 +1,17 @@
 {
   "name": "joshkay.ca",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website of Josh Kay.",
   "main": "index.js",
   "scripts": {
-    "start": "next",
-    "offline": "next build && sls offline",
+    "start": "next start",
+    "dev": "next",
     "build": "next build",
-    "deploy": "set NODE_ENV=production&&next build && sls deploy"
+    "export": "next export",
+    "deploy": "cd lambdas && bash build.sh joshkay-ca_contact && cd .."
   },
   "keywords": [],
-  "author": "",
+  "author": "Josh Kay",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
@@ -20,24 +21,17 @@
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "compression": "^1.7.3",
-    "express": "^4.16.4",
-    "net": "^1.0.2",
     "next": "^8.0.0",
     "node-sass": "^4.11.0",
-    "path-match": "^1.2.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-google-recaptcha": "^1.0.5",
+    "react-inlinesvg": "^0.8.4",
     "react-scroll": "^1.7.11",
     "react-waypoint": "^9.0.1",
     "reactstrap": "^7.1.0",
-    "serverless": "^1.38.0",
-    "serverless-apigw-binary": "^0.4.4",
-    "serverless-domain-manager": "^2.6.13",
-    "serverless-http": "^1.9.1",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "validator": "^10.11.0"
   },
-  "devDependencies": {
-    "serverless-offline": "^4.4.2"
-  }
+  "devDependencies": {}
 }
