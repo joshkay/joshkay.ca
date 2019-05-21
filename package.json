@@ -8,7 +8,7 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "deploy": "cd lambdas && bash build.sh joshkay-ca_contact && cd .."
+    "deploy": "cd lambdas && bash build.sh joshkay-ca_contact && cd .. && npm run build && npm run export && aws s3 sync out/ s3://joshkay.ca"
   },
   "keywords": [],
   "author": "Josh Kay",
@@ -21,7 +21,7 @@
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "next": "^8.0.0",
+    "next": "^8.1.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
