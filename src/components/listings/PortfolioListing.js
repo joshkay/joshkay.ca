@@ -8,7 +8,7 @@ import {
   faReact
 } from '@fortawesome/free-brands-svg-icons';
 
-import { getIconElement } from '../tools/icons';
+import { getIconElement } from '../../tools/icons';
 
 export default ({ name, image, description, tools, githubUrl, siteUrl }) =>
 (

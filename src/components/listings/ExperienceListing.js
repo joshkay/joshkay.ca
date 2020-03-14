@@ -1,4 +1,5 @@
 import React from 'react';
+import ParagraphList from '../display/ParagraphList';
 
 export default ({ title, company, description, dates }) =>
 (
@@ -6,10 +7,12 @@ export default ({ title, company, description, dates }) =>
     <div className="resume-content">
       <h3 className="mb-0">{title}</h3>
       <div className="subheading mb-3">{company}</div>
-      <p>{description}</p>
+      <ParagraphList content={description} />
     </div>
     <div className="resume-date text-md-right">
-      <span className="text-primary">{dates}</span>
+      <div className="text-primary">
+        <ParagraphList content={dates} />
+      </div>
     </div>
   </div>
 );

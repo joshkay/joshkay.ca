@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import ProfileNavbar from '../components/navbar';
+import ProfileNavbar from '../components/nav/navbar';
 
 export default ({ children, name, image, sections, focusedSection }) =>
 (

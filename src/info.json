@@ -9,7 +9,7 @@
       "info": {
         "email": "me@joshkay.ca",
         "phoneNumber": "(416) 464-4510",
-        "description": "I am a web developer who has a passion for creating easy to use software.",
+        "description": "Detail oriented software engineer with 5+ years of professional experience developing custom websites, apps and video games. Motivated developer who enjoys creating responsive, easy to use full stack applications. Posseses a track record of developing a project management tool used by 50+ employees, a data centre documentation tool, as well as a virtual reality game published on Steam. Enjoy contributing to open source projects that I have a passion for.",
         "github": "https://github.com/joshkay",
         "linkedIn": "https://www.linkedin.com/in/joshmkay",
         "twitter": "https://twitter.com/joshmkay"
@@ -40,28 +40,43 @@
       "header": true,
       "items": [
         {
-          "title": "Contractor",
+          "title": "Owner",
+          "company": "Full Stack Software Solutions",
+          "description": "Consulting and custom software development.",
+          "dates": "Feb 2020 - Present"
+        },
+        {
+          "title": "Software Developer (Contractor)",
           "company": "MARCOMM Integrated Business Solutions",
-          "description": "",
-          "dates": "Apr 2018 - Present"
+          "description": [
+            "Contracted by Apotex Inc. to assist develop a web application that is used to manage their data centers, network cabling, work orders, inventory and more. Built with VB, ASP.NET and MS SQL Server.",
+            "Contracted by Apotex Inc. to consult and create software that is used for managing capital engineering projects, financial forecasting and fiscal year budgeting. Consolidated information from SAP, an existing custom CMS, and multiple excel sheets into a properly structured SQL database through automatic daily imports. Developed using React-Redux, IIS, Node.js, Express and MS SQL Server. Created custom reports using Qlik Sense."
+          ],
+          "dates": [
+            "May 2011 - Dec 2012", 
+            "Apr 2018 - Present"
+          ]
         },
         {
           "title": "Executive Vice President",
           "company": "Hailstone Games",
-          "description": "",
+          "description": [
+            "In charge of conducting interviews and hiring employees.",
+            "Implemented agile development practices consisting of weekly sprints.",
+            "Managed interpersonal relationships within the office.",
+            "Designer and lead virtual reality gameplay developer of GoalieVR, an interactive VR game that places you in NHL goalie pads and invites friends to take shots on their mobile devices."
+          ],
           "dates": "Jan 2017 - Apr 2018"
         },
         {
           "title": "Software Engineer",
           "company": "OSnap! Games",
-          "description": "",
+          "description": [
+            "Started as an intern and solidified my position as a core team member.",
+            "One of two lead developers on Quasar, a competitive, multiplayer, top down space shooter with a retro feel.",
+            "Promoted with OSnap! Games at conventions in Seattle, Boston, Texas, and Washington as a lead developer."
+          ],
           "dates": "Jan 2015 - Jan 2017"
-        },
-        {
-          "title": "Contractor",
-          "company": "MARCOMM Integrated Business Solutions",
-          "description": "Contracted by Apotex Inc. to develop web software that managed data centers, cabling, work orders, inventory and more.  Worked with SQL, VB, and ASP.NET. ",
-          "dates": "May 2011 - Dec 2012"
         }
       ]
     },
@@ -73,13 +88,18 @@
         {
           "title": "Bloc",
           "company": "Full Stack Web Development Certification",
-          "description": "",
+          "description": "Learned how to develop full stack applications using React, Node.js, & Express.",
           "dates": "Apr 2018 - Apr 2019"
         },
         {
           "title": "George Brown College",
           "company": "Game Programming Diploma",
-          "description": "With Honours",
+          "description": [
+            "Graduated with Honors.",
+            "Lead Programmer on Fidelity, an iOS 2.5d side-scroller for Sony’s record label, Pirates Blend.",
+            "Lead Programmer on Couch Surfers, an Android application consisting of mini-games and stories.",
+            "Intern at OSnap! Games."
+          ],
           "dates": "Jan 2013 - Apr 2016"
         }
       ]

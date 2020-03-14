@@ -3,12 +3,23 @@ section.resume-section {
   padding-bottom: 5rem !important;
   width: 100%;
   .resume-item {
-    .resume-content {}
+    .resume-content {
+      p {
+        margin-bottom: 0.2rem
+      }
+    }
     .resume-date {
       min-width: none;
     }
   }
 }
+
+.resume-date {
+  p {
+    margin-bottom: 0.2rem
+  }
+}
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;

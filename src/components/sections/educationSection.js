@@ -1,5 +1,5 @@
 import React from 'react';
-import ExperienceListing from '../experienceListing';
+import ExperienceListing from '../listings/ExperienceListing';
 
 export default ({section: {items}}) =>
 (

@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioListing from '../portfolioListing';
+import PortfolioListing from '../listings/portfolioListing';
 
 export default ({section: {items}}) =>
 (

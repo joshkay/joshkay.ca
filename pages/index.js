@@ -1,7 +1,7 @@
 import React from 'react';
 import Default from '../src/layouts/default';
-import ProfileSection from '../src/components/profileSection';
-import ProfileSectionSeparator from '../src/components/profileSectionSeparator';
+import ProfileSection from '../src/components/sections/profileSection';
+import ProfileSectionSeparator from '../src/components/sections/profileSectionSeparator';
 
 import AboutSection from '../src/components/sections/aboutSection';
 import PortfolioSection from '../src/components/sections/portfolioSection';

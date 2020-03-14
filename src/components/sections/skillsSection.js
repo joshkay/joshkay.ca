@@ -1,5 +1,5 @@
 import React from 'react';
-import SkillsListing from '../skillsListing';
+import SkillsListing from '../listings/skillsListing';
 
 export default ({section: {info: {languages, libraries, workflow}}}) =>
 (
