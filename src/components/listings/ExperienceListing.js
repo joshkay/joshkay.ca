@@ -1,7 +1,6 @@
-import React from 'react';
 import ParagraphList from '../display/ParagraphList';
 
-export default ({ title, company, description, dates }) =>
+const ExperienceListing = ({ title, company, description, dates }) =>
 (
   <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
     <div className="resume-content">
@@ -16,3 +15,5 @@ export default ({ title, company, description, dates }) =>
     </div>
   </div>
 );
+
+export default ExperienceListing;

@@ -1,7 +1,6 @@
-import React from 'react';
 import ExperienceListing from '../listings/ExperienceListing';
 
-export default ({section: {items}}) =>
+const ExperienceSection = ({section: {items}}) =>
 (
   items.map(({
     title, company, description, dates
@@ -13,3 +12,5 @@ export default ({section: {items}}) =>
     />
   ))
 );
+
+export default ExperienceSection;

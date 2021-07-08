@@ -12,7 +12,7 @@ import SVG from 'react-inlinesvg';
 const getSVGElement = (name) =>
 {
   name = name.replace('#', 'sharp');
-  const path = `static/images/logos/${name.toLowerCase()}.svg`;
+  const path = `/images/logos/${name.toLowerCase()}.svg`;
   return (
     <SVG src={path}>
       <img src={path} type="image/svg+xml" />

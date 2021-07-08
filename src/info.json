@@ -1,6 +1,8 @@
 {
   "firstName": "Josh",
   "lastName": "Kay",
+  "profileImage": "/images/headshot.svg",
+  "logoImage": "/images/logo.svg",
   "sections": [
     {
       "id": "about",
@@ -22,7 +24,7 @@
       "items": [
         {
           "name": "Music Box",
-          "image": "/static/images/portfolio/musicbox.png",
+          "image": "images/portfolio/musicbox.png",
           "description": "A simple way to listen to music at home or on the go. Fully responsive design makes it easy to use on mobile.",
           "tools":
           [
@@ -31,6 +33,18 @@
           ],
           "githubUrl": "https://github.com/joshkay/musicbox",
           "siteUrl": "https://musicbox-joshkay.firebaseapp.com/"
+        },
+        {
+          "name": "Unreal Engine 4.14 Contribution",
+          "image": "images/portfolio/ue4-14.jpg",
+          "description": "Contributed to Unreal Engine 4.14 by fixing a bug that caused spectator view to fail to funciton properly.",
+          "tools":
+          [
+            "UE4",
+            "C++"
+          ],
+          "githubUrl": "https://github.com/EpicGames/UnrealEngine/pull/2815",
+          "siteUrl": "https://www.unrealengine.com/en-US/blog/unreal-engine-4-14-released"
         }
       ]
     },

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
 import { Waypoint } from 'react-waypoint';
 
-export default class ProfileSection extends Component
+class ProfileSection extends Component
 {
   constructor(props)
   {
@@ -57,3 +56,5 @@ export default class ProfileSection extends Component
     );
   }
 };
+
+export default ProfileSection;

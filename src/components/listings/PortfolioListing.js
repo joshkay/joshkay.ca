@@ -1,7 +1,5 @@
-import React from 'react';
 import { Card, Button, CardHeader, CardFooter, CardBody,
   CardImg, CardText } from 'reactstrap';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faGithub,
@@ -10,7 +8,7 @@ import {
 
 import { getIconElement } from '../../tools/icons';
 
-export default ({ name, image, description, tools, githubUrl, siteUrl }) =>
+const PortfolioListing = ({ name, image, description, tools, githubUrl, siteUrl }) =>
 (
   <div className="col-sm-6 col-lg-6 col-xl-4 mb-3">
     <Card>
@@ -45,4 +43,6 @@ export default ({ name, image, description, tools, githubUrl, siteUrl }) =>
       </CardFooter>
     </Card>
   </div>
-)
+);
+
+export default PortfolioListing;

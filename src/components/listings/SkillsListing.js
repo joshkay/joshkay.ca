@@ -1,10 +1,9 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { getIconElement } from '../../tools/icons';
 
-export default ({ languages, libraries, workflow }) =>
+const SkillsListing = ({ languages, libraries, workflow }) =>
 {
   const softwareList = (list) => list.map((listEntry, index) =>
   (
@@ -41,3 +40,5 @@ export default ({ languages, libraries, workflow }) =>
     </div>
   );
 };
+
+export default SkillsListing;

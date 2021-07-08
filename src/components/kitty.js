@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class RandomKitty
+class RandomKitty
 {
   constructor(props)
   {
@@ -46,3 +46,5 @@ export default class RandomKitty
     );
   }
 };
+
+export default RandomKitty;

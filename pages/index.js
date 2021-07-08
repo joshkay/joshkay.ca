@@ -12,8 +12,6 @@ import ContactSection from '../src/components/sections/contactSection';
 
 import info from '../src/info.json';
 
-import '../scss/styles.scss';
-
 class IndexPage extends React.Component
 {
   constructor(props)
@@ -129,7 +127,11 @@ class IndexPage extends React.Component
   render()
   {
     return (
-      <Default name={this.name} image="/static/images/profile.png" sections={info.sections}
+      <Default 
+        name={this.name} 
+        logoImage={info.logoImage} 
+        profileImage={info.profileImage} 
+        sections={info.sections}
         focusedSection={this.getFocusedSection()}>
         {
           info.sections.map((section, index) => (

@@ -1,8 +1,7 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-export default ({firstName, lastName, 
+const AboutSection = ({firstName, lastName, 
   section: { info: {
     email,
     phoneNumber,
@@ -34,3 +33,5 @@ export default ({firstName, lastName,
     </div>
   </div>
 );
+
+export default AboutSection;

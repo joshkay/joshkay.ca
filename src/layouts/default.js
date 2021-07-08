@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import ProfileNavbar from '../components/nav/navbar';
 
-export default ({ children, name, image, sections, focusedSection }) =>
+const DefaultLayout = ({ children, name, logoImage, profileImage, sections, focusedSection }) =>
 (
   <div>
      <Head>
@@ -10,10 +10,14 @@ export default ({ children, name, image, sections, focusedSection }) =>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta charSet='utf-8' />
 
-      <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="favicon.ico" />
     </Head>
 
-    <ProfileNavbar name={name} image={image} sections={sections}
+    <ProfileNavbar 
+      name={name} 
+      logoImage={logoImage} 
+      profileImage={profileImage}
+      sections={sections}
       focusedSection={focusedSection} />
 
     <div className="container-fluid p-0">
@@ -21,3 +25,5 @@ export default ({ children, name, image, sections, focusedSection }) =>
     </div>
   </div>
 );
+
+export default DefaultLayout;

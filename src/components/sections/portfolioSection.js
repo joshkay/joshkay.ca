@@ -1,7 +1,6 @@
-import React from 'react';
 import PortfolioListing from '../listings/portfolioListing';
 
-export default ({section: {items}}) =>
+const PortfolioSection = ({ section: { items }}) =>
 (
   <div className="row">
     {
@@ -16,3 +15,5 @@ export default ({section: {items}}) =>
     }
   </div>
 );
+
+export default PortfolioSection;
