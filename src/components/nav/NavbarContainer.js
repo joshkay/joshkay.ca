@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 
 const NavbarContainer = forwardRef(({ children, ...props }, ref) => {
   return (
@@ -20,15 +20,7 @@ const NavbarContainer = forwardRef(({ children, ...props }, ref) => {
       overflowY="auto"
       {...props}
     >
-      <Flex
-        minHeight={600}
-        height="100%"
-        direction="column"
-        justify="center"
-        flexShrink={0}
-      >
-        {children}
-      </Flex>
+      {children}
     </Flex>
   )
 });

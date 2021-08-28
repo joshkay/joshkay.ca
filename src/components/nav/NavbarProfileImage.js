@@ -26,6 +26,7 @@ const NavbarProfileImage = ({ profileImage, name }) => (
         />
         <Text
           fontSize="4xl"
+          color="white"
         >
           {name}
         </Text>

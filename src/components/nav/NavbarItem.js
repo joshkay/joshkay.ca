@@ -9,7 +9,8 @@ const NavbarItem = ({ children, isLast, to, ...rest }) => {
     >
       <Text 
         fontSize="xl" 
-        display="block" 
+        display="block"
+        color="white"
         {...rest}
       >
         {children}

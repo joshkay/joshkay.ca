@@ -1,8 +1,6 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, DarkMode, Flex } from '@chakra-ui/react';
 import ColorModeToggleButton from 'components/buttons/ColorModeToggleButton';
 import React, { useEffect, useState, useRef } from 'react';
-import { Link } from 'react-scroll';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import NavbarContainer from './NavbarContainer';
 import NavbarItems from './NavbarItems';
 import NavbarProfileImage from './NavbarProfileImage';
@@ -74,7 +72,6 @@ const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection
           onClick={handleNavLinkClick}
         />
       </Flex>
-      
       <Box
         position="absolute"
         top={0}
