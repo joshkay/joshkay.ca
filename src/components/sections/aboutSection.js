@@ -1,21 +1,29 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Box, Text, Heading } from '@chakra-ui/react';
 
-const AboutSection = ({firstName, lastName, 
-  section: { info: {
-    email,
-    phoneNumber,
-    description,
-    github,
-    linkedIn,
-    twitter
-  }}
+const AboutSection = ({
+  firstName, 
+  lastName, 
+  section: { 
+    info: {
+      email,
+      phoneNumber,
+      description,
+      github,
+      linkedIn,
+      twitter
+    }
+  }
 }) =>
 (
   <div>
-    <h1 className="mb-0">{`${firstName} `}
-      <span className="text-primary">{lastName}</span>
-    </h1>
+    <Heading as="h1" size="2xl">
+      <Box display="flex">
+        {`${firstName} `}
+        <Text color="primary">{lastName}</Text>
+      </Box>
+    </Heading>
     <div className="mb-5">{`${phoneNumber} · `} 
       <a href="mailto:name@email.com">{email}</a>
     </div>

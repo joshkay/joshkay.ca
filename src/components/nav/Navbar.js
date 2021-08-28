@@ -1,9 +1,14 @@
+import { Box, Flex } from '@chakra-ui/react';
+import ColorModeToggleButton from 'components/buttons/ColorModeToggleButton';
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-scroll';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import NavbarContainer from './NavbarContainer';
+import NavbarItems from './NavbarItems';
+import NavbarProfileImage from './NavbarProfileImage';
 
-const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection }) => {
-
+const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection }) => 
+{
   const [collapsed, setCollapsed] = useState(true);
   const rootRef = useRef();
 
@@ -11,7 +16,7 @@ const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection
   {
     const handleClick = (e) =>
     {
-      if (rootRef.current.contains(e.target))
+      if (!rootRef.current || rootRef.current.contains(e.target))
       {
         return;
       }
@@ -50,44 +55,35 @@ const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection
     closeNavbar();
   }
 
-  const navItems = sections.map((section, index) =>
-  {
-    let activeClass = '';
-    if (section.id === focusedSection)
-    {
-      activeClass = 'active';
-    }
-
-    return (
-      <NavItem key={index}>
-        <Link to={section.id} href="" hashSpy={true} duration={500} smooth={true}>
-          <div className={`nav-link w-100 h-100 ${activeClass}`} onClick={handleNavLinkClick}>
-            {section.name}
-          </div>
-        </Link>
-      </NavItem>
-    );
-  });
-
   return (
-    <div ref={rootRef}>
-      <Navbar expand="lg" fixed="top" dark className="bg-primary">
-        <Link to="about" href=""
-          className="navbar-brand mr-auto" smooth={true}
-          hashSpy={true} duration={500}>
-          <span>
-            <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src={profileImage} alt="" />
-          </span>
-          <span className="navbar-name">{name}</span>
-        </Link>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            {navItems}
-          </Nav>
-        </Collapse>
-      </Navbar>
-    </div>
+    <NavbarContainer ref={rootRef}>
+      <Flex
+        minHeight={600}
+        height="100%"
+        direction="column"
+        justify="center"
+        flexShrink={0}
+      >
+        <NavbarProfileImage 
+          profileImage={profileImage}
+          name={name}
+        />
+        <NavbarItems 
+          sections={sections}
+          focusedSection={focusedSection}
+          onClick={handleNavLinkClick}
+        />
+      </Flex>
+      
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        m={1}
+      >
+        <ColorModeToggleButton />
+      </Box>
+    </NavbarContainer>
   );
 };
 

@@ -1,16 +1,16 @@
 import React from 'react';
-import Default from '../src/layouts/default';
-import ProfileSection from '../src/components/sections/profileSection';
-import ProfileSectionSeparator from '../src/components/sections/profileSectionSeparator';
+import Default from 'layouts/default';
+import ProfileSection from 'components/sections/profileSection';
+import ProfileSectionSeparator from 'components/sections/profileSectionSeparator';
 
-import AboutSection from '../src/components/sections/aboutSection';
-import PortfolioSection from '../src/components/sections/portfolioSection';
-import ExperienceSection from '../src/components/sections/experienceSection';
-import EducationSection from '../src/components/sections/educationSection';
-import SkillsSection from '../src/components/sections/skillsSection';
-import ContactSection from '../src/components/sections/contactSection';
+import AboutSection from 'components/sections/aboutSection';
+import PortfolioSection from 'components/sections/portfolioSection';
+import ExperienceSection from 'components/sections/experienceSection';
+import EducationSection from 'components/sections/educationSection';
+import SkillsSection from 'components/sections/skillsSection';
+import ContactSection from 'components/sections/contactSection';
 
-import info from '../src/info.json';
+import info from '../../data/info.json';
 
 class IndexPage extends React.Component
 {
