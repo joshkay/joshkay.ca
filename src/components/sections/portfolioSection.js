@@ -1,4 +1,4 @@
-import PortfolioListing from '../listings/portfolioListing';
+import PortfolioListing from 'components/listings/PortfolioListing';
 
 const PortfolioSection = ({ section: { items }}) =>
 (

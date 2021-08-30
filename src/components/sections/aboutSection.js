@@ -2,13 +2,12 @@ import {
   Box, 
   Text, 
   Heading, 
-  IconButton, 
-  Flex, 
+  IconButton,
   VStack, 
   Link,
   HStack
 } from '@chakra-ui/react';
-import RandomKitty from 'components/kitty';
+import RandomKitty from 'components/RandomKitty';
 import { FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const AboutSection = ({

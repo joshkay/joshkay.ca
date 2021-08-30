@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import Default from 'layouts/default';
-import ProfileSection from 'components/sections/profileSection';
-import ProfileSectionSeparator from 'components/sections/profileSectionSeparator';
+import ProfileSection from 'components/sections/base/ProfileSection';
+import ProfileSectionSeparator from 'components/sections/base/ProfileSectionSeparator';
 
-import AboutSection from 'components/sections/aboutSection';
-import PortfolioSection from 'components/sections/portfolioSection';
-import ExperienceSection from 'components/sections/experienceSection';
-import EducationSection from 'components/sections/educationSection';
-import SkillsSection from 'components/sections/skillsSection';
-import ContactSection from 'components/sections/contactSection';
+import AboutSection from 'components/sections/AboutSection';
+import PortfolioSection from 'components/sections/PortfolioSection';
+import ExperienceSection from 'components/sections/ExperienceSection';
+import EducationSection from 'components/sections/EducationSection';
+import SkillsSection from 'components/sections/SkillsSection';
+import ContactSection from 'components/sections/ContactSection';
 
 import info from '../../data/info.json';
 

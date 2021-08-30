@@ -44,7 +44,11 @@ const ProfileSection = ({
         >
           { 
             heading ? (
-              <Heading as="h2" size="2xl">
+              <Heading 
+                as="h2" 
+                size="2xl" 
+                mb={12}
+              >
                 {heading}
               </Heading>
             ) : null

@@ -22,7 +22,6 @@ export const Chakra = ({ cookies, children }) =>
   )
 }
 
-
 export const getServerSideProps = ({ req }) =>
 {
   return {

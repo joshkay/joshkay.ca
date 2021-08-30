@@ -1,4 +1,4 @@
-import { getIconElement } from '../../tools/icons';
+import { IconElement } from 'tools/icons';
 
 const PortfolioListing = ({ name, image, description, tools, githubUrl, siteUrl }) =>
 (

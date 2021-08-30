@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "next start",
-    "dev": "next dev -p 3001",
+    "dev": "next",
     "build": "next build",
     "export": "next export",
     "lint": "next lint",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0"
+    "eslint-config-next": "11.1.0",
+    "eslint-plugin-import": "^2.24.2"
   }
 }

@@ -1,49 +1,99 @@
-import { Box, HStack, Text, Heading, VStack } from '@chakra-ui/react';
-import { getIconElement } from 'tools/icons';
+import { HStack, Text, Heading, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import { IconElement } from 'tools/icons';
 
 const SkillsListing = ({ languages, libraries, workflow }) =>
 {
   const softwareList = (list) => list.map((listEntry, index) =>
   (
-    <Box key={index} as="li">
-      { getIconElement(listEntry) }
-      <Text>{ listEntry }</Text>
-    </Box>
+    <WrapItem
+      key={index}
+    >
+      <VStack 
+        as="li"
+        spacing={4}
+      >
+        <IconElement 
+          w={24} 
+          h={24} 
+          name={listEntry}
+          _hover={{ color: "primary" }}
+        />
+        <Text>
+          { listEntry }
+        </Text>
+      </VStack>
+    </WrapItem>
   ));
 
   const workflowList = workflow.map((workflowEntry, index) =>
   (
-    <Box as="li" key={index}>
-      <Box mr={2}>
+    <VStack 
+      as="li" 
+      key={index}
+    >
+      <HStack
+        alignItems="flex-start"
+      >
         <Text color="primary">
           ✔
         </Text>
-      </Box>
-      
-      <Text>
-      { workflowEntry }
-      </Text>
-      
-    </Box>
+        
+        <Text>
+        { workflowEntry }
+        </Text>
+      </HStack>      
+    </VStack>
   ));
 
   return (
-    <div>
-      <Heading>Languages</Heading>
-      <HStack as="ul">
-        {softwareList(languages)}
-      </HStack>
-
-      <Heading>Libraries</Heading>
-      <HStack as="ul">
-        {softwareList(libraries)}
-      </HStack>
-
-      <Heading>Workflow</Heading>
-      <VStack as="ul">
-        {workflowList}
+    <VStack 
+      alignItems="flex-start"
+      spacing={12}
+    >
+      <VStack
+        alignItems="flex-start"
+        spacing={6}
+      >
+        <Heading>Languages</Heading>
+        <Wrap 
+          as="ul"
+          listStyleType="none"
+          wrap="wrap"
+          spacing={6}
+        >
+          {softwareList(languages)}
+        </Wrap>
       </VStack>
-    </div>
+      
+      <VStack
+        alignItems="flex-start"
+        spacing={6}
+      >
+        <Heading>Libraries</Heading>
+        <Wrap 
+          as="ul"
+          listStyleType="none"
+          wrap="wrap"
+          spacing={4}
+        >
+          {softwareList(libraries)}
+        </Wrap>
+      </VStack>
+
+      <VStack
+        alignItems="flex-start"
+        spacing={6}
+      >
+        <Heading>Workflow</Heading>
+        <VStack 
+          as="ul"
+          alignItems="flex-start"
+          listStyleType="none"
+        >
+          {workflowList}
+        </VStack>
+      </VStack>
+    </VStack>
   );
 };
 

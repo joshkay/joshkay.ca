@@ -1,4 +1,4 @@
-import SkillsListing from '../listings/skillsListing';
+import SkillsListing from 'components/listings/SkillsListing';
 
 const SkillsSection = ({section: {info: {languages, libraries, workflow}}}) =>
 (

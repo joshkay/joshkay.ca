@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import validator from 'validator';
 import axios from 'axios';
-import ReCAPTCHA from 'react-google-recaptcha';
+import { ReCAPTCHA } from 'react-google-recaptcha';
 import getConfig from 'next/config';
 import { toast } from '@chakra-ui/react';
 
