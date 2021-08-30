@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Default from 'layouts/default';
 import ProfileSection from 'components/sections/profileSection';
 import ProfileSectionSeparator from 'components/sections/profileSectionSeparator';
@@ -12,24 +12,9 @@ import ContactSection from 'components/sections/contactSection';
 
 import info from '../../data/info.json';
 
-class IndexPage extends React.Component
+const IndexPage = () =>
 {
-  constructor(props)
-  {
-    super(props);
-
-    this.name = `${info.firstName} ${info.lastName}`;
-
-    this.state = {
-      visibleSections: this.getInitialVisibleSections()
-    };
-
-    this.handleSectionEnter = this.handleSectionEnter.bind(this);
-    this.handleSectionLeave = this.handleSectionLeave.bind(this);
-    this.getFocusedSection = this.getFocusedSection.bind(this);
-  }
-
-  getInitialVisibleSections()
+  const getInitialVisibleSections = () =>
   {
     let visibleSections = new Array(info.sections.length);
     visibleSections[0] = info.sections[0].id;
@@ -37,11 +22,14 @@ class IndexPage extends React.Component
     return visibleSections;
   }
 
-  handleSectionEnter(section)
+  const [visibleSections, setVisibleSections] = useState(getInitialVisibleSections());
+
+  const name = `${info.firstName} ${info.lastName}`;
+
+  const handleSectionEnter = (section) =>
   {
-    this.setState((prevState) =>
-    {
-      let { visibleSections } = prevState;
+    setVisibleSections(prevVisibleSections => {
+      let visibleSections = {...prevVisibleSections};
       visibleSections[section.number] = section.id;
       
       return {
@@ -50,11 +38,10 @@ class IndexPage extends React.Component
     });
   }
 
-  handleSectionLeave(section)
+  const handleSectionLeave = (section) =>
   {
-    this.setState((prevState) =>
-    {
-      let { visibleSections } = prevState;
+    setVisibleSections(prevVisibleSections => {
+      let visibleSections = {...prevVisibleSections};
       visibleSections[section.number] = undefined;
       
       return {
@@ -63,9 +50,8 @@ class IndexPage extends React.Component
     });
   }
 
-  getFocusedSection()
+  const getFocusedSection = () =>
   {
-    const { visibleSections } = this.state;
     if (visibleSections !== undefined)
     {
       for (let i = 0; i < visibleSections.length; i++)
@@ -79,7 +65,7 @@ class IndexPage extends React.Component
     }
   }
 
-  getSection(section, index)
+  const getSection = (section, index) =>
   {
     let separator = null;
     if (index < info.sections.length - 1)
@@ -89,11 +75,15 @@ class IndexPage extends React.Component
 
     return (
       <div key={index}>
-        <ProfileSection heading={section.header ? section.name : null}  id={section.id} number={index}
-          handleSectionEnter={this.handleSectionEnter}
-          handleSectionLeave={this.handleSectionLeave}>
+        <ProfileSection 
+          heading={section.header ? section.name : null} 
+          id={section.id} 
+          number={index}
+          handleSectionEnter={handleSectionEnter}
+          handleSectionLeave={handleSectionLeave}
+        >
           {
-            this.getSectionContent(section.id)
+            getSectionContent(section.id)
           }
         </ProfileSection>
 
@@ -102,7 +92,7 @@ class IndexPage extends React.Component
     );
   }
 
-  getSectionContent(id)
+  const getSectionContent = (id) =>
   {
     const sectionInfo = info.sections.find((section) => section.id === id);
 
@@ -124,23 +114,20 @@ class IndexPage extends React.Component
     }
   }
 
-  render()
-  {
-    return (
-      <Default 
-        name={this.name} 
-        logoImage={info.logoImage} 
-        profileImage={info.profileImage} 
-        sections={info.sections}
-        focusedSection={this.getFocusedSection()}>
-        {
-          info.sections.map((section, index) => (
-            this.getSection(section, index))
-          )
-        }
-      </Default>
-    );
-  }
+  return (
+    <Default 
+      name={name} 
+      logoImage={info.logoImage} 
+      profileImage={info.profileImage} 
+      sections={info.sections}
+      focusedSection={getFocusedSection()}>
+      {
+        info.sections.map((section, index) => (
+          getSection(section, index))
+        )
+      }
+    </Default>
+  );
 };
 
 export default IndexPage;

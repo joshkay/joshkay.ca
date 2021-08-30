@@ -1,6 +1,15 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { Box, Text, Heading } from '@chakra-ui/react';
+import { 
+  Box, 
+  Text, 
+  Heading, 
+  IconButton, 
+  Flex, 
+  VStack, 
+  Link,
+  HStack
+} from '@chakra-ui/react';
+import RandomKitty from 'components/kitty';
+import { FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
 
 const AboutSection = ({
   firstName, 
@@ -17,29 +26,87 @@ const AboutSection = ({
   }
 }) =>
 (
-  <div>
-    <Heading as="h1" size="2xl">
-      <Box display="flex">
-        {`${firstName} `}
-        <Text color="primary">{lastName}</Text>
+  [
+    <VStack
+      key="about"
+      alignItems="flex-start"
+      spacing={8}
+    >
+      <Box>
+        <Heading as="h1" size="4xl">
+          <Box display="flex">
+            <Box mr={2}>
+              <Text>{firstName}</Text>
+            </Box>
+            <Text color="primary">{lastName}</Text>
+          </Box>
+        </Heading>
+        <Box mt={2}>
+          <Text>
+            {`${phoneNumber} · `} 
+            <Link href="mailto:name@email.com" color="primary">
+              {email}
+            </Link>
+          </Text>
+        </Box>
       </Box>
-    </Heading>
-    <div className="mb-5">{`${phoneNumber} · `} 
-      <a href="mailto:name@email.com">{email}</a>
-    </div>
-    <p className="lead mb-5">{description}</p>
-    <div className="social-icons">
-      <a href={linkedIn} target="_blank">
-        <FontAwesomeIcon icon={faLinkedinIn} />
-      </a>
-      <a href={github} target="_blank">
-        <FontAwesomeIcon icon={faGithub} />
-      </a>
-      <a href={twitter} target="_blank">
-        <FontAwesomeIcon icon={faTwitter} />
-      </a>
-    </div>
-  </div>
+      <VStack
+        alignItems="flex-start"
+      >
+      {
+        description.split('. ').map((line, index) => (
+          <Text key={index}>
+            {`${line}.`}
+          </Text>
+        ))
+      }
+      </VStack>
+      <HStack>
+        <a 
+          href={linkedIn} 
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconButton
+            variant="outline"
+            icon={<FaLinkedinIn />}
+          />
+        </a>
+        <a 
+          href={github} 
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconButton
+            variant="outline"
+            icon={<FaGithub />}
+          />
+        </a>
+        <a 
+          href={twitter} 
+          target="_blank"
+          rel="noreferrer"
+        >
+          <IconButton
+            variant="outline"
+            icon={<FaTwitter />}
+          />
+        </a>
+      </HStack>
+    </VStack>
+    ,
+    <Box
+      key="kitty"
+      position="absolute"
+      right={0}
+      bottom={0}
+      padding={8}
+      overflow="hidden"
+    >
+      <RandomKitty />
+    </Box>
+  ]
+  
 );
 
 export default AboutSection;

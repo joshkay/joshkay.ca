@@ -1,13 +1,22 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faJs,
-  faPython,
-  faReact
-} from '@fortawesome/free-brands-svg-icons';
-import {
-  faDatabase
-} from '@fortawesome/free-solid-svg-icons';
 import SVG from 'react-inlinesvg';
+import { 
+  FaReact,
+  FaPython,
+  FaDatabase,
+  FaSass,
+  FaJava
+} from 'react-icons/fa';
+import { 
+  SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiCsharp,
+  SiCplusplus
+ } from "react-icons/si";
+import {
+  Image
+} from '@chakra-ui/react';
 
 const getSVGElement = (name) =>
 {
@@ -15,29 +24,31 @@ const getSVGElement = (name) =>
   const path = `/images/logos/${name.toLowerCase()}.svg`;
   return (
     <SVG src={path}>
-      <img src={path} type="image/svg+xml" />
+      <Image alt={name} src={path} type="image/svg+xml" />
     </SVG>
   );
 };
 
-const getFontAwesomeElement = (icon) =>
-{
-  return <FontAwesomeIcon icon={icon} />
+const ICON_ELEMENTS = {
+  'React': <FaReact />,
+  'Python': <FaPython />,
+  'SQL': <FaDatabase />,
+  'Javascript': <SiJavascript />,
+  'Typescript': <SiTypescript />,
+  'HTML5': <SiHtml5 />,
+  'CSS3': <SiCss3 />,
+  'SASS': <FaSass />,
+  'Java': <FaJava />,
+  'C#': <SiCsharp />,
+  'C++': <SiCplusplus />
 }
 
 export const getIconElement = (name) =>
 {
-  switch (name)
+  const iconElement = ICON_ELEMENTS[name];
+  if (iconElement)
   {
-    case 'React':
-      return getFontAwesomeElement(faReact);
-    //case 'Javascript':
-     // return getFontAwesomeElement(faJs);
-    case 'Python':
-      return getFontAwesomeElement(faPython);
-    case 'SQL':
-      return getFontAwesomeElement(faDatabase);
-    default:
-      return getSVGElement(name);
+    return iconElement;
   }
+  return getSVGElement(name);
 }

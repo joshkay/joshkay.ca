@@ -1,17 +1,9 @@
-import { Card, Button, CardHeader, CardFooter, CardBody,
-  CardImg, CardText } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faGithub,
-  faReact
-} from '@fortawesome/free-brands-svg-icons';
-
 import { getIconElement } from '../../tools/icons';
 
 const PortfolioListing = ({ name, image, description, tools, githubUrl, siteUrl }) =>
 (
   <div className="col-sm-6 col-lg-6 col-xl-4 mb-3">
-    <Card>
+    {/* <Card>
       <CardHeader><h3 className="m-0">{name}</h3></CardHeader> 
       <CardImg top width="100%" src={image} alt={`Portfolio image for ${name}`} />
       <CardBody>
@@ -41,7 +33,7 @@ const PortfolioListing = ({ name, image, description, tools, githubUrl, siteUrl 
           </div>
         </div>
       </CardFooter>
-    </Card>
+    </Card> */}
   </div>
 );
 

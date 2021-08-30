@@ -1,42 +1,48 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
-import { getIconElement } from '../../tools/icons';
+import { Box, HStack, Text, Heading, VStack } from '@chakra-ui/react';
+import { getIconElement } from 'tools/icons';
 
 const SkillsListing = ({ languages, libraries, workflow }) =>
 {
   const softwareList = (list) => list.map((listEntry, index) =>
   (
-    <li key={index} className="list-inline-item">
+    <Box key={index} as="li">
       { getIconElement(listEntry) }
-      <p>{ listEntry }</p>
-    </li>
+      <Text>{ listEntry }</Text>
+    </Box>
   ));
 
   const workflowList = workflow.map((workflowEntry, index) =>
   (
-    <li key={index}>
-      <FontAwesomeIcon icon={faCheck} />
+    <Box as="li" key={index}>
+      <Box mr={2}>
+        <Text color="primary">
+          ✔
+        </Text>
+      </Box>
+      
+      <Text>
       { workflowEntry }
-    </li>
+      </Text>
+      
+    </Box>
   ));
 
   return (
     <div>
-      <div className="subheading mb-3">Languages</div>
-      <ul className="list-inline dev-icons">
+      <Heading>Languages</Heading>
+      <HStack as="ul">
         {softwareList(languages)}
-      </ul>
+      </HStack>
 
-      <div className="subheading mb-3">Libraries</div>
-      <ul className="list-inline dev-icons">
+      <Heading>Libraries</Heading>
+      <HStack as="ul">
         {softwareList(libraries)}
-      </ul>
+      </HStack>
 
-      <div className="subheading mb-3">Workflow</div>
-      <ul className="fa-ul mb-0 dev-workflow">
+      <Heading>Workflow</Heading>
+      <VStack as="ul">
         {workflowList}
-      </ul>
+      </VStack>
     </div>
   );
 };

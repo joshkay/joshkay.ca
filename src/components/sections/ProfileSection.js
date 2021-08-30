@@ -1,60 +1,60 @@
-import React, { Component } from 'react';
+import { Flex, Heading } from '@chakra-ui/react';
+import React from 'react';
 import { Waypoint } from 'react-waypoint';
 
-class ProfileSection extends Component
+const ProfileSection = ({ 
+  id, 
+  number,
+  heading,
+  children,
+  handleSectionEnter,
+  handleSectionLeave
+}) =>
 {
-  constructor(props)
+  const handleWaypointEnter = () =>
   {
-    super(props);
-
-    this.handleWaypointEnter = this.handleWaypointEnter.bind(this);
-    this.handleWaypointLeave = this.handleWaypointLeave.bind(this);
+    handleSectionEnter({
+      id, 
+      number,
+    });
   }
 
-  getSectionInfo()
+  const handleWaypointLeave = () =>
   {
-    return {
-      number: this.props.number,
-      id: this.props.id
-    };
+    handleSectionLeave({
+      id, 
+      number,
+    });
   }
 
-  handleWaypointEnter()
-  {
-    this.props.handleSectionEnter(this.getSectionInfo());
-  }
-
-  handleWaypointLeave()
-  {
-    this.props.handleSectionLeave(this.getSectionInfo());
-  }
-
-  render()
-  {
-    const { children, id, heading } = this.props
-
-    let header = null;
-
-    if (heading)
-    {
-      header = (
-        <h2 className="mb-5">{heading}</h2>
-      );
-    }
-
-    return (
-      <Waypoint
-        onEnter={this.handleWaypointEnter}
-        onLeave={this.handleWaypointLeave}>
-        <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id={id}>
-          <div className="w-100">
-            {header}
-            {children}
-          </div>
-        </section>
-      </Waypoint>
-    );
-  }
+  return (
+    <Waypoint
+      onEnter={handleWaypointEnter}
+      onLeave={handleWaypointLeave}>
+      <Flex
+        minHeight="100vh"
+        position="relative"
+      >
+        <Flex
+          alignItems="flex-start"
+          justifyContent="center"
+          direction="column"
+          grow={1}
+          m={20}
+        >
+          { 
+            heading ? (
+              <Heading as="h2" size="2xl">
+                {heading}
+              </Heading>
+            ) : null
+          }
+          {children}
+        </Flex>
+      </Flex>
+     
+    </Waypoint>
+  );
 };
 
 export default ProfileSection;

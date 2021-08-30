@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "next start",
-    "dev": "next",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "export": "next export",
+    "lint": "next lint",
     "deploy": "cd lambdas && bash build.sh joshkay-ca_contact && cd .. && npm run build && npm run export && aws s3 sync out/ s3://joshkay.ca"
   },
   "keywords": [],
@@ -20,24 +21,22 @@
     "@emotion/styled": "^11.3.0",
     "@fontsource/open-sans": "^4.5.0",
     "@fontsource/raleway": "^4.5.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
     "axios": "^0.21.1",
-    "bootstrap": "^5.1.0",
     "framer-motion": "^4.1.17",
     "next": "^11.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-recaptcha": "^2.1.0",
+    "react-icons": "^4.2.0",
     "react-inlinesvg": "^2.3.0",
     "react-scroll": "^1.8.3",
     "react-waypoint": "^10.1.0",
-    "reactstrap": "^8.9.0",
     "sass": "^1.37.5",
     "url": "^0.11.0",
     "validator": "^13.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0"
+  }
 }

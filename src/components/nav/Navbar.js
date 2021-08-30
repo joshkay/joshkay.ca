@@ -1,11 +1,11 @@
-import { Box, DarkMode, Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import ColorModeToggleButton from 'components/buttons/ColorModeToggleButton';
 import React, { useEffect, useState, useRef } from 'react';
 import NavbarContainer from './NavbarContainer';
 import NavbarItems from './NavbarItems';
 import NavbarProfileImage from './NavbarProfileImage';
 
-const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection }) => 
+const Navbar = ({ name, profileImage, logoImage, sections, focusedSection }) => 
 {
   const [collapsed, setCollapsed] = useState(true);
   const rootRef = useRef();
@@ -84,4 +84,4 @@ const ProfileNavbar = ({ name, profileImage, logoImage, sections, focusedSection
   );
 };
 
-export default ProfileNavbar;
+export default Navbar;

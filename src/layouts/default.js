@@ -1,8 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
-import ProfileNavbar from '../components/nav/navbar';
+import Navbar from '../components/nav/navbar';
+import { Flex } from '@chakra-ui/react';
 
-const DefaultLayout = ({ children, name, logoImage, profileImage, sections, focusedSection }) =>
+const DefaultLayout = ({ 
+  children, 
+  name, 
+  logoImage, 
+  profileImage, 
+  sections, 
+  focusedSection 
+}) =>
 (
   <div>
      <Head>
@@ -13,16 +21,19 @@ const DefaultLayout = ({ children, name, logoImage, profileImage, sections, focu
       <link rel="icon" type="image/x-icon" href="favicon.ico" />
     </Head>
 
-    <ProfileNavbar 
+    <Navbar 
       name={name} 
       logoImage={logoImage} 
       profileImage={profileImage}
       sections={sections}
       focusedSection={focusedSection} />
 
-    <div className="container-fluid p-0">
+    <Flex
+      direction="column"
+      paddingLeft={300}
+    >
       {children}
-    </div>
+    </Flex>
   </div>
 );
 

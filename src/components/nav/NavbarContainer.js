@@ -25,4 +25,6 @@ const NavbarContainer = forwardRef(({ children, ...props }, ref) => {
   )
 });
 
+NavbarContainer.displayName = 'NavbarContainer';
+
 export default NavbarContainer;
