@@ -1,14 +1,26 @@
 import React, { useState, useRef } from 'react';
 import validator from 'validator';
 import axios from 'axios';
-import { ReCAPTCHA } from 'react-google-recaptcha';
+import ReCAPTCHA from 'react-google-recaptcha';
 import getConfig from 'next/config';
-import { toast } from '@chakra-ui/react';
+import { 
+  Wrap, 
+  FormControl, 
+  FormLabel, 
+  Input, 
+  useToast, 
+  Button, 
+  FormErrorMessage, 
+  Textarea, 
+  SimpleGrid,
+  VStack
+} from '@chakra-ui/react';
 
 const { publicRuntimeConfig } = getConfig();
 
 const ContactSection = () =>
 {
+  const toast = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrors, setShowErrors] = useState(false);
   const [fields, setFields] = useState({
@@ -102,7 +114,7 @@ const ContactSection = () =>
       toast({
         description: "Thanks for reaching out!  I will be in touch shortly.",
         status: "success",
-        duration: 9000,
+        duration: 4000,
         isClosable: true,
       });
     }
@@ -225,52 +237,77 @@ const ContactSection = () =>
   }
 
   return (
-    <form key={1} onSubmit={handleSubmit} noValidate
-      className="needs-validation">
-      <div className="form-row">
-        <div className="col-md-6 mb-3">
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter email"
-            className={`form-control ${formClass('email')}`} 
-            onChange={handleUserInput} value={fields.email} />
-          {formValidationMessage('email')}
-        </div>
-        <div className="col-md-6 mb-3">
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Enter name"
-            className={`form-control ${formClass('name')}`} 
-            onChange={handleUserInput} value={fields.name} />
-          {formValidationMessage('name')}
-        </div>
-      </div>
-      <div className="form-group">
-        <label htmlFor="message">Message:</label>
-        <textarea type="text" id="message" name="message" 
-          placeholder="Enter message" rows={10}
-          className={`form-control ${formClass('message')}`} 
-          onChange={handleUserInput} value={fields.message}>
-        </textarea>
-        {formValidationMessage('message')}
-      </div>
-      <div className="form-group">
-        <ReCAPTCHA
-          className={`${formClass('captcha')}`}
-          ref={reCaptchaRef}
-          sitekey={publicRuntimeConfig.RECAPTCHA_SITE_KEY}
-          onChange={handleCaptchaChange}
-        />
-        {formValidationMessage('captcha')}
-      </div>
-      <button type="submit" className="btn btn-primary">
-      {isSubmitting ? 
-      (
-        <div>
-          <span className="mr-2 spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-          Sending
-        </div>
-      ) 
-      : "Submit"}
-      </button>
+    <form 
+      key={1} 
+      onSubmit={handleSubmit} 
+      noValidate
+      style={{ width: '100%' }}
+    >
+      <VStack
+        spacing={4}
+        alignItems="flex-start"
+      >
+        <SimpleGrid 
+          width="100%"
+          columns={2} 
+          spacing={4}
+        >
+          <FormControl isRequired isInvalid={errors.email != null}>
+            <FormLabel>Email</FormLabel>
+            <Input 
+              type="email" 
+              id="email" 
+              name="email" 
+              placeholder="Enter email"
+              onChange={handleUserInput} 
+              value={fields.email}
+            />
+            <FormErrorMessage>{errors.email}</FormErrorMessage>
+          </FormControl>
+          <FormControl isRequired isInvalid={errors.name != null}>
+            <FormLabel>Name</FormLabel>
+            <Input 
+              type="text" 
+              id="name" 
+              name="name" 
+              placeholder="Enter name"
+              onChange={handleUserInput} 
+              value={fields.name}
+            />
+            <FormErrorMessage>{errors.name}</FormErrorMessage>
+          </FormControl>
+        </SimpleGrid>
+        <FormControl isRequired isInvalid={errors.message != null}>
+          <FormLabel>Message</FormLabel>
+          <Textarea 
+            type="text" 
+            id="message" 
+            name="message" 
+            placeholder="Enter message"
+            rows={10}
+            onChange={handleUserInput} 
+            value={fields.message}
+          />
+          <FormErrorMessage>{errors.message}</FormErrorMessage>
+        </FormControl>
+        <FormControl isRequired isInvalid={errors.captcha != null}>
+          <ReCAPTCHA
+            ref={reCaptchaRef}
+            sitekey={publicRuntimeConfig.RECAPTCHA_SITE_KEY}
+            onChange={handleCaptchaChange}
+          />
+          <FormErrorMessage>{errors.captcha}</FormErrorMessage>
+        </FormControl>
+        <Button
+          isLoading={isSubmitting}
+          loadingText="Submitting"    
+          type="submit"
+          bg="primary"
+          color="white"
+        >
+          Submit 
+        </Button>
+      </VStack>
     </form>
   );
 };

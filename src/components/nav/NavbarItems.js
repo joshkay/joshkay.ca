@@ -5,7 +5,8 @@ const NavbarItems = ({ focusedSection, sections, onClick }) => {
   return (
     <Stack
       spacing={4}
-      align="center"
+      align="flex-start"
+      paddingLeft={8}
       justify="center"
       direction="column"
     >
@@ -13,7 +14,7 @@ const NavbarItems = ({ focusedSection, sections, onClick }) => {
       sections && sections.map((section, index) => (
         <NavbarItem 
           key={index} 
-          //active={section.id === focusedSection}
+          active={section.id === focusedSection}
           onClick={onClick}
           to={section.id}
         >

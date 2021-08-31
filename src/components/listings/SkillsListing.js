@@ -1,28 +1,25 @@
-import { HStack, Text, Heading, VStack, Wrap, WrapItem } from '@chakra-ui/react';
+import { HStack, Text, Heading, VStack, Wrap } from '@chakra-ui/react';
 import { IconElement } from 'tools/icons';
 
 const SkillsListing = ({ languages, libraries, workflow }) =>
 {
   const softwareList = (list) => list.map((listEntry, index) =>
   (
-    <WrapItem
+    <VStack 
       key={index}
+      as="li"
+      spacing={4}
     >
-      <VStack 
-        as="li"
-        spacing={4}
-      >
-        <IconElement 
-          w={24} 
-          h={24} 
-          name={listEntry}
-          _hover={{ color: "primary" }}
-        />
-        <Text>
-          { listEntry }
-        </Text>
-      </VStack>
-    </WrapItem>
+      <IconElement 
+        w={24} 
+        h={24} 
+        name={listEntry}
+        _hover={{ color: "primary" }}
+      />
+      <Text>
+        { listEntry }
+      </Text>
+    </VStack>
   ));
 
   const workflowList = workflow.map((workflowEntry, index) =>

@@ -34,6 +34,7 @@ const ProfileSection = ({
       <Flex
         minHeight="100vh"
         position="relative"
+        id={id}
       >
         <Flex
           alignItems="flex-start"
@@ -56,7 +57,6 @@ const ProfileSection = ({
           {children}
         </Flex>
       </Flex>
-     
     </Waypoint>
   );
 };

@@ -29,29 +29,26 @@ const IndexPage = () =>
   const handleSectionEnter = (section) =>
   {
     setVisibleSections(prevVisibleSections => {
-      let visibleSections = {...prevVisibleSections};
+      let visibleSections = [...prevVisibleSections];
       visibleSections[section.number] = section.id;
       
-      return {
-        visibleSections
-      };
+      return visibleSections;
     });
   }
 
   const handleSectionLeave = (section) =>
   {
     setVisibleSections(prevVisibleSections => {
-      let visibleSections = {...prevVisibleSections};
+      let visibleSections = [...prevVisibleSections];
       visibleSections[section.number] = undefined;
       
-      return {
-        visibleSections
-      };
+      return visibleSections;
     });
   }
 
   const getFocusedSection = () =>
   {
+    console.log(visibleSections)
     if (visibleSections !== undefined)
     {
       for (let i = 0; i < visibleSections.length; i++)

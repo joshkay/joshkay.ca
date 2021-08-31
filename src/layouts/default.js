@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from 'components/nav/navbar';
+import Navbar from 'components/nav/Navbar';
 import { Flex } from '@chakra-ui/react';
 
 const DefaultLayout = ({ 

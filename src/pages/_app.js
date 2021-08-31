@@ -1,4 +1,3 @@
-import '../../scss/styles.scss';
 import { Chakra, getServerSideProps } from 'Chakra';
 
 const MyApp = ({ Component, pageProps }) => 

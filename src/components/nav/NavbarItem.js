@@ -1,20 +1,42 @@
 import { Link } from 'react-scroll';
-import { Text } from '@chakra-ui/react';
+import { Flex, Icon, Text } from '@chakra-ui/react';
+import { BiRightArrow } from 'react-icons/bi';
 
-const NavbarItem = ({ children, isLast, to, ...rest }) => {
+const NavbarItem = ({ 
+  children, 
+  isLast, 
+  to,
+  active,
+  ...rest 
+}) => {
   return (
     <Link 
       href={`#${to}`}
       to={to}
+      duration={500}
+      smooth={true}
     >
-      <Text 
-        fontSize="xl" 
-        display="block"
-        color="white"
-        {...rest}
+      <Flex
+        alignItems="center"
       >
-        {children}
-      </Text>
+        {
+          active ? (
+            <Icon
+              as={BiRightArrow}
+              mr={2}
+            />
+          ) : null
+        }
+        
+        <Text 
+          fontSize="xl" 
+          display="block"
+          color="white"
+          {...rest}
+        >
+          {children}
+        </Text>
+      </Flex>
     </Link>
   )
 }

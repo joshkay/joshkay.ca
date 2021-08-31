@@ -5,7 +5,13 @@ import NavbarContainer from './NavbarContainer';
 import NavbarItems from './NavbarItems';
 import NavbarProfileImage from './NavbarProfileImage';
 
-const Navbar = ({ name, profileImage, logoImage, sections, focusedSection }) => 
+const Navbar = ({
+  name, 
+  profileImage,
+  logoImage, 
+  sections,
+  focusedSection
+}) => 
 {
   const [collapsed, setCollapsed] = useState(true);
   const rootRef = useRef();
@@ -50,6 +56,7 @@ const Navbar = ({ name, profileImage, logoImage, sections, focusedSection }) =>
 
   const handleNavLinkClick = () =>
   {
+    console.log('hehe')
     closeNavbar();
   }
 
