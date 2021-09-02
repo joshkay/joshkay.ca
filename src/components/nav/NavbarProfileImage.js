@@ -9,6 +9,8 @@ const NavbarProfileImage = ({ profileImage, name }) => (
     <Link
       href="#about"
       to="about"
+      duration={500}
+      smooth={true}
     >
       <Flex
         mb={2}

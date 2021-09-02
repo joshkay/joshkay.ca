@@ -13,13 +13,15 @@ import {
   FormErrorMessage, 
   Textarea, 
   SimpleGrid,
-  VStack
+  VStack,
+  useColorMode
 } from '@chakra-ui/react';
 
 const { publicRuntimeConfig } = getConfig();
 
 const ContactSection = () =>
 {
+  const { colorMode } = useColorMode();
   const toast = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrors, setShowErrors] = useState(false);
@@ -292,6 +294,8 @@ const ContactSection = () =>
         </FormControl>
         <FormControl isRequired isInvalid={errors.captcha != null}>
           <ReCAPTCHA
+            key={`captcha-${colorMode}`}
+            theme={colorMode}
             ref={reCaptchaRef}
             sitekey={publicRuntimeConfig.RECAPTCHA_SITE_KEY}
             onChange={handleCaptchaChange}
@@ -302,10 +306,9 @@ const ContactSection = () =>
           isLoading={isSubmitting}
           loadingText="Submitting"    
           type="submit"
-          bg="primary"
-          color="white"
+          variant="primary"
         >
-          Submit 
+          Send 
         </Button>
       </VStack>
     </form>

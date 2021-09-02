@@ -22,6 +22,7 @@ const NavbarItem = ({
         {
           active ? (
             <Icon
+              color="white"
               as={BiRightArrow}
               mr={2}
             />

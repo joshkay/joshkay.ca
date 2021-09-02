@@ -3,7 +3,7 @@ import {
   cookieStorageManager,
   localStorageManager,
 } from "@chakra-ui/react";
-import theme from 'styling/theme';
+import theme from 'theme';
 
 import "@fontsource/raleway/400.css";
 import "@fontsource/open-sans/700.css";

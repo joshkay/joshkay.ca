@@ -48,7 +48,6 @@ const IndexPage = () =>
 
   const getFocusedSection = () =>
   {
-    console.log(visibleSections)
     if (visibleSections !== undefined)
     {
       for (let i = 0; i < visibleSections.length; i++)
@@ -73,7 +72,7 @@ const IndexPage = () =>
     return (
       <div key={index}>
         <ProfileSection 
-          heading={section.header ? section.name : null} 
+          heading={section.header ? section.heading ? section.heading : section.name : null} 
           id={section.id} 
           number={index}
           handleSectionEnter={handleSectionEnter}

@@ -38,6 +38,9 @@ const AboutSection = ({
               <Text>{firstName}</Text>
             </Box>
             <Text color="primary">{lastName}</Text>
+            <Box ml={4}>
+              🍕
+            </Box>
           </Box>
         </Heading>
         <Box mt={2}>

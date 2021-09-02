@@ -35,7 +35,7 @@ const ProfileSection = ({
         minHeight="100vh"
         position="relative"
         id={id}
-      >
+    >
         <Flex
           alignItems="flex-start"
           justifyContent="center"

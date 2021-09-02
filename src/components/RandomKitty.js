@@ -7,11 +7,17 @@ const RandomKitty = ({
 }) => 
 {
   const [loadingImage, setLoadingImage] = useState(null);
+  const [loadingCachedImage, setLoadingCachedImage] = useState(null);
   const [displayedImage, setDisplayedImage] = useState(null);
   const [cachedImage, setCachedImage] = useState(null);
   
   const fetchCats = async () =>
   {
+    if (loadingImage || loadingCachedImage)
+    {
+      return;
+    }
+
     setLoadingImage(true);
 
     const { data } = await axios.get(
@@ -24,7 +30,7 @@ const RandomKitty = ({
     {
       setDisplayedImage(data[0].url);
     }
-  }
+  };
 
   useEffect(() => {
     fetchCats();
@@ -67,8 +73,9 @@ const RandomKitty = ({
           src={displayedImage} 
           alt='Cute kitty' 
           onLoad={() => { 
+            setLoadingCachedImage(true);
+            setCachedImage(displayedImage);
             setLoadingImage(false);
-            setCachedImage(displayedImage)
           }}
           draggable={false}
           userSelect="none"
@@ -77,11 +84,14 @@ const RandomKitty = ({
           position="absolute"
           width="100%"
           height="100%"
-          display={loadingImage && cachedImage ? undefined : "none"}
+          display={loadingImage && (!loadingCachedImage && cachedImage) ? undefined : "none"}
           objectFit="cover"
           borderRadius="full"
           borderColor="transparent"
           onClick={() => fetchCats()}
+          onLoad={() => { 
+            setLoadingCachedImage(false);
+          }}
           src={cachedImage} 
           alt='Cute kitty'
           draggable={false}

@@ -97,17 +97,18 @@
     {
       "id": "education",
       "name": "Education",
+      "heading": "Education 📚",
       "header": true,
       "items": [
         {
-          "title": "Bloc",
-          "company": "Full Stack Web Development Certification",
+          "school": "Bloc",
+          "credential": "Full Stack Web Development Certification",
           "description": "Learned how to develop full stack applications using React, Node.js, & Express.",
           "dates": "Apr 2018 - Apr 2019"
         },
         {
-          "title": "George Brown College",
-          "company": "Game Programming Diploma",
+          "school": "George Brown College",
+          "credential": "Game Programming Diploma",
           "description": [
             "Graduated with Honors.",
             "Lead Programmer on Fidelity, an iOS 2.5d side-scroller for Sony’s record label, Pirates Blend.",
@@ -121,6 +122,7 @@
     {
       "id": "skills",
       "name": "Skills",
+      "heading": "Skills 🤹‍♀️",
       "header": true,
       "info": {
         "languages": [
@@ -148,6 +150,7 @@
     {
       "id": "contact",
       "name": "Contact",
+      "heading": "Hi👋 Don't be shy!",
       "header": true
     }
   ]
