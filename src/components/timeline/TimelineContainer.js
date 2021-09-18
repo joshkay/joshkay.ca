@@ -7,7 +7,6 @@ import {
 const TimelineContainer = ({
   children
 }) => {
-  
   const styles = useMultiStyleConfig("Timeline");
 
   return (

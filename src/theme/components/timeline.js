@@ -1,5 +1,5 @@
 const Timeline = {
-  parts: ["base", "item"],
+  parts: ["base", "item", "dot"],
   baseStyle: ({ colorMode }) => ({
     base: {
       alignItems: 'flex-start',
@@ -8,7 +8,7 @@ const Timeline = {
     item: {
       listStyleType: "none",
       pb: 3,
-      mb: 1,
+      mb: "2px",
       position: "relative",
       _last: {
         mb: 0,
@@ -18,10 +18,12 @@ const Timeline = {
         }
       },
       _before: {
-        top: 6,
+        marginTop: "28px",
+        top: 0,
         bottom: 0,
         width: "100%",
-        borderLeft: `1px dashed ${colorMode === 'dark' ? 'white' : 'black'}`,
+        borderLeft: "1px dashed",
+        borderColor: colorMode === 'dark' ? 'white' : 'gray.500',
         content: '" "',
         position: "absolute",
       }
@@ -30,6 +32,7 @@ const Timeline = {
       position: "relative",
       ps: 6,
       _before: {
+        top: "3px",
         height: "20px",
         width: "20px",
         position: "absolute",
@@ -37,24 +40,13 @@ const Timeline = {
         content: '" "',
         background: "primary",
         transform: "translateX(-33.7px)",
-        border: `4px solid ${colorMode === 'dark' ? 'white' : 'black'}`
+        border: "4px solid",
+        borderColor: colorMode === 'dark' ? 'white' : 'gray.300'
       }
     }
   }),
-  // Two variants: outline and solid
   variants: {
-    primary: {
-      backgroundColor: "primary",
-      color: "white",
-      _hover: {
-        bg: "lochmara.300"
-      },
-      _active: {
-        bg: "lochmara.500"
-      }
-    },
   },
-  // The default size and variant values
   defaultProps: {
   },
 }

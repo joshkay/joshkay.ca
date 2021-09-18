@@ -11,7 +11,12 @@
       "info": {
         "email": "me@joshkay.ca",
         "phoneNumber": "(416) 464-4510",
-        "description": "Detail oriented software engineer with 5+ years of professional experience developing custom websites, apps and video games. Motivated developer who enjoys creating responsive, easy to use full stack applications. Posseses a track record of developing a project management tool used by 50+ employees, a data centre documentation tool, as well as a virtual reality game published on Steam. Enjoy contributing to open source projects that I have a passion for.",
+        "description": [
+          "Detail oriented software engineer with 5+ years of professional experience developing custom websites, apps and video games.",
+          "Motivated developer who enjoys creating responsive, easy to use full stack applications.", 
+          "Posseses a track record of developing a project management tool used by 50+ employees, a data centre documentation tool, as well as a virtual reality game published on Steam.",
+          "Enjoy contributing to open source projects that I have a passion for."
+        ],
         "github": "https://github.com/joshkay",
         "linkedIn": "https://www.linkedin.com/in/joshmkay",
         "twitter": "https://twitter.com/joshmkay"
@@ -21,10 +26,16 @@
       "id": "portfolio",
       "name": "Portfolio",
       "header": true,
+      "sections": 
+      [
+        "Web Dev",
+        "Game Dev",
+        "Home Automation"
+      ],
       "items": [
         {
           "name": "Music Box",
-          "image": "images/portfolio/musicbox.png",
+          "image": "images/portfolio/musicbox/main.png",
           "description": "A simple way to listen to music at home or on the go. Fully responsive design makes it easy to use on mobile.",
           "tools":
           [
@@ -32,19 +43,127 @@
             "Firebase"          
           ],
           "githubUrl": "https://github.com/joshkay/musicbox",
-          "siteUrl": "https://musicbox-joshkay.firebaseapp.com/"
+          "siteUrl": "https://musicbox-joshkay.firebaseapp.com/",
+          "sections": 
+          [
+            "Web Dev"
+          ]
         },
         {
-          "name": "Unreal Engine 4.14 Contribution",
-          "image": "images/portfolio/ue4-14.jpg",
+          "name": "UE4.14 Contribution",
+          "image": "images/portfolio/ue4contribution/main.png",
           "description": "Contributed to Unreal Engine 4.14 by fixing a bug that caused spectator view to fail to funciton properly.",
           "tools":
           [
-            "UE4",
+            "Unreal Engine",
             "C++"
           ],
           "githubUrl": "https://github.com/EpicGames/UnrealEngine/pull/2815",
-          "siteUrl": "https://www.unrealengine.com/en-US/blog/unreal-engine-4-14-released"
+          "siteUrl": "https://www.unrealengine.com/en-US/blog/unreal-engine-4-14-released",
+          "sections": 
+          [
+            "Game Dev"
+          ]
+        },
+        {
+          "name": "Puck Luck",
+          "image": "images/portfolio/puckluck/main.png",
+          "description": "NHL playoff fantasy hockey app. Currently being used to display stats for my family pool.",
+          "tools":
+          [
+            "React"
+          ],
+          "githubUrl": "https://github.com/joshkay/puckluck",
+          "siteUrl": "https://puckluck.bet/",
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "Co-Op Shop",
+          "image": "images/portfolio/coopshop/main.png",
+          "description": "Shared Real-time Grocery List.",
+          "tools":
+          [
+            "React"
+          ],
+          "githubUrl": "https://github.com/joshkay/co-op-shop",
+          "siteUrl": "https://co-op-shop.herokuapp.com/",
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "Twinkly Home Assistant Script",
+          "description": "Data center connectivity.",
+          "githubUrl": "https://github.com/joshkay/home-assistant-twinkly",
+          "tools":
+          [
+            "Python",
+            "Home Assistant"
+          ],
+          "sections": 
+          [
+            "Home Automation"
+          ]
+        },
+        {
+          "name": "Phoenix",
+          "image": "images/portfolio/phoenix/main.png",
+          "description": "Custom built project management software.",
+          "tools":
+          [
+            "React"
+          ],
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "eTRACS",
+          "image": "images/portfolio/etracs/main.png",
+          "description": "Data center connectivity management software.",
+          "tools":
+          [
+            ".NET"
+          ],
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "GoalieVR",
+          "image": "images/portfolio/goalievr/main.png",
+          "description": "Experience the adrenaline rush of defending your goal against 5 opposing players, an unrealistic but FUN experience. Play against AI or your friends (requires a compatible iOS or Android mobile device).",
+          "tools":
+          [
+            "Unreal Engine",
+            "C++"
+          ],
+          "siteUrl": "https://www.goalievr.com/",
+          "sections": 
+          [
+            "Game Dev"
+          ]
+        },
+        {
+          "name": "Quasar",
+          "image": "images/portfolio/quasar/main.png",
+          "description": "A competitive, multiplayer, top down space shooter with a retro feel.",
+          "tools":
+          [
+            "Unreal Engine",
+            "C++"
+          ],
+          "siteUrl": "https://www.kickstarter.com/projects/osnapgames/quasar",
+          "sections": 
+          [
+            "Game Dev"
+          ]
         }
       ]
     },

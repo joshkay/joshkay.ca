@@ -56,9 +56,9 @@ const AboutSection = ({
         alignItems="flex-start"
       >
       {
-        description.split('. ').map((line, index) => (
+        description.map((line, index) => (
           <Text key={index}>
-            {`${line}.`}
+            {line}
           </Text>
         ))
       }

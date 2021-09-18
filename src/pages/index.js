@@ -11,6 +11,7 @@ import SkillsSection from 'components/sections/SkillsSection';
 import ContactSection from 'components/sections/ContactSection';
 
 import info from '../../data/info.json';
+import { Box, Heading, VStack } from '@chakra-ui/react';
 
 const IndexPage = () =>
 {
@@ -79,7 +80,31 @@ const IndexPage = () =>
           handleSectionLeave={handleSectionLeave}
         >
           {
-            getSectionContent(section.id)
+            section.sections ? (
+              <VStack
+                alignItems="flex-start"
+                spacing={8}
+              >
+              {
+                section.sections.map(((subSection, subIndex) => (
+                  <Box 
+                    key={`${index}${subIndex}`}
+                    width="100%"
+                  >
+                    <Heading 
+                      as="h3" 
+                      mb={4}
+                    >
+                      {subSection}
+                    </Heading>
+                    {
+                      getSectionContent(section.id, subSection)
+                    }
+                  </Box>
+                )))
+              }                
+              </VStack>
+            ) : getSectionContent(section.id)
           }
         </ProfileSection>
 
@@ -88,9 +113,16 @@ const IndexPage = () =>
     );
   }
 
-  const getSectionContent = (id) =>
+  const getSectionContent = (id, subSection) =>
   {
-    const sectionInfo = info.sections.find((section) => section.id === id);
+    let sectionInfo = {...info.sections.find((section) => section.id === id)};
+
+    if (subSection)
+    {
+      sectionInfo.items = [...sectionInfo.items.filter(
+        (item) => item.sections.includes(subSection)
+      )];
+    }
 
     switch(id)
     {

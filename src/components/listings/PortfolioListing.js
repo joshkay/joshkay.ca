@@ -1,40 +1,102 @@
+import { 
+  Box, 
+  Flex, 
+  Heading, 
+  HStack, 
+  Image, 
+  Text,
+  Tooltip,
+  useMultiStyleConfig
+} from '@chakra-ui/react';
 import { IconElement } from 'tools/icons';
 
 const PortfolioListing = ({ name, image, description, tools, githubUrl, siteUrl }) =>
-(
-  <div className="col-sm-6 col-lg-6 col-xl-4 mb-3">
-    {/* <Card>
-      <CardHeader><h3 className="m-0">{name}</h3></CardHeader> 
-      <CardImg top width="100%" src={image} alt={`Portfolio image for ${name}`} />
-      <CardBody>
-        <h4>About</h4>
-        <CardText>{description}</CardText>
+{
+  const styles = useMultiStyleConfig("PortfolioListing");
+  
+  return (
+    <Flex
+      __css={styles.base}
+    >
+      <Flex 
+        alignItems="center"
+        mb={4}
+      >
+        <Heading 
+          as="h2"
+        >
+          {name}
+        </Heading>
+        {
+          githubUrl ? (
+            <Box
+              ml="auto"
+              alignSelf="flex-start"
+            >
+              <a 
+                href={githubUrl} 
+                rel="noreferrer" 
+                target="_blank"
+              >
+                <IconElement 
+                  name="Github"
+                  w={10}
+                  h={10}
+                />
+              </a>
+            </Box>
+          ) : null
+        }
+      </Flex>
+      {
+        image ? (
+          <a 
+            href={siteUrl} 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            <Image
+              __css={styles.image}
+              src={image} 
+              alt={`Portfolio image for ${name}`}
+            />
+          </a>
+        ) : null
+      }
+      <Box>
+        <Text mb={2}>
+          {description}
+        </Text>
 
-        <div className="d-flex align-items-center">
-          <h4 className="m-0 pr-2">Built with</h4>
+        <Flex>
+          <Heading
+            fontSize="3xl"
+            as="h3"
+            mr={3}
+          >
+            Built with
+          </Heading>
+          <HStack>
           {
             tools.map((tool, index) =>
             (
-              <div key={index} title={tool} className="portfolio-icon">
-                {getIconElement(tool)}
-              </div>
+              <Tooltip
+                label={tool}
+                key={index} 
+              >
+                <IconElement 
+                  name={tool}
+                  w={6} 
+                  h={6} 
+                />
+              </Tooltip>
             ))
-          }   
-        </div>
-      </CardBody>
-
-      <CardFooter>
-        <div className="portfolio-item-links d-flex flex-row align-items-center p-10">
-          <Button href={siteUrl} target="_blank" className="w-100">View Site</Button>
-          <div className="social-icons">
-            <a href={githubUrl} target="_blank">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-          </div>
-        </div>
-      </CardFooter>
-    </Card> */}
-  </div>
-);
+          }
+          </HStack>
+        </Flex>
+      </Box>
+    </Flex>
+  );
+}
 
 export default PortfolioListing;

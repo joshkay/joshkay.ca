@@ -4,7 +4,8 @@ import {
   FaPython,
   FaDatabase,
   FaSass,
-  FaJava
+  FaJava,
+  FaGithub
 } from 'react-icons/fa';
 import { 
   SiTypescript,
@@ -12,12 +13,16 @@ import {
   SiHtml5,
   SiCss3,
   SiCsharp,
-  SiCplusplus
+  SiCplusplus,
+  SiFirebase,
+  SiUnrealengine,
+  SiDotNet
  } from "react-icons/si";
 import {
   Icon,
   Image
 } from '@chakra-ui/react';
+import { forwardRef } from 'react';
 
 const SVGElement = ({ name, ...props }) =>
 {
@@ -42,15 +47,42 @@ const ICON_ELEMENTS = {
   'SASS': FaSass,
   'Java': FaJava,
   'C#': SiCsharp,
-  'C++': SiCplusplus
+  'C++': SiCplusplus,
+  'Github': FaGithub,
+  'Firebase': SiFirebase,
+  'Unreal Engine': SiUnrealengine,
+  ".NET": SiDotNet,
 }
 
-export const IconElement = ({ name, ...props }) =>
+const IconElement = forwardRef(({ name, ...props }, ref) =>
 {
   const IconComponent = ICON_ELEMENTS[name];
   if (IconComponent)
   {
-    return <Icon as={IconComponent} {...props} />;
+    return (
+      <div
+        ref={ref} 
+      >
+        <Icon
+          as={IconComponent} 
+          {...props} 
+        />
+      </div>
+    );
   }
-  return <SVGElement name={name} {...props} />;
-}
+
+  return (
+    <div
+      ref={ref} 
+    >
+      <Icon
+        as={SVGElement}
+        name={name}
+        {...props} 
+      />
+    </div>
+  );
+});
+IconElement.displayName = 'IconElement';
+
+export { IconElement };
