@@ -23,6 +23,7 @@
     "@fontsource/raleway": "^4.5.0",
     "axios": "^0.21.1",
     "framer-motion": "^4.1.17",
+    "moralis": "^0.0.98",
     "next": "^11.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

@@ -30,14 +30,17 @@ const AboutSection = ({
       key="about"
       alignItems="flex-start"
       spacing={8}
+      paddingBottom={82}
     >
       <Box>
         <Heading as="h1" size="4xl">
           <Box display="flex">
-            <Box mr={2}>
-              <Text>{firstName}</Text>
+            <Box display="flex" flexWrap="wrap">
+              <Box mr={2}>
+                <Text>{firstName}</Text>
+              </Box>
+              <Text color="primary">{lastName}</Text>
             </Box>
-            <Text color="primary">{lastName}</Text>
             <Box ml={4}>
               🍕
             </Box>

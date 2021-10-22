@@ -1,4 +1,4 @@
-const Timeline = {
+const PortfolioListing = {
   parts: ["base", "image"],
   baseStyle: ({ colorMode }) => ({
     base: {
@@ -21,4 +21,4 @@ const Timeline = {
   }
 }
 
-export default Timeline;
+export default PortfolioListing;

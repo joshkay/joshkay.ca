@@ -4,9 +4,10 @@ import { Stack } from '@chakra-ui/react';
 const NavbarItems = ({ focusedSection, sections, onClick }) => {
   return (
     <Stack
-      spacing={4}
-      align="flex-start"
-      paddingLeft={8}
+      marginTop={[2,, 0]}
+      spacing={[3,, 4]}
+      align={["center",, "flex-start"]}
+      paddingLeft={[0,, 8]}
       justify="center"
       direction="column"
     >

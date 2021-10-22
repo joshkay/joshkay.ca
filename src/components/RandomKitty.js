@@ -39,7 +39,7 @@ const RandomKitty = ({
   return (
     <Flex
       borderRadius="full"
-      boxSize="200px"
+      boxSize={["150px",, "180px", "200px"]}
       border="4px"
       alignItems="center"
       justifyContent="center"
@@ -50,7 +50,7 @@ const RandomKitty = ({
           <Spinner 
             position="absolute"
             color="primary"
-            boxSize="200px"
+            boxSize={["150px",, "180px", "200px"]}
             thickness="4px"
           />
         ) : null

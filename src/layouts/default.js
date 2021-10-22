@@ -26,11 +26,12 @@ const DefaultLayout = ({
       logoImage={logoImage} 
       profileImage={profileImage}
       sections={sections}
-      focusedSection={focusedSection} />
+      focusedSection={focusedSection} 
+    />
 
     <Flex
       direction="column"
-      paddingLeft={300}
+      paddingLeft={[0,, 300]}
     >
       {children}
     </Flex>

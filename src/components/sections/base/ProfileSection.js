@@ -41,7 +41,8 @@ const ProfileSection = ({
           justifyContent="center"
           direction="column"
           grow={1}
-          m={20}
+          m={[10,,, 20]}
+          mt={20}
         >
           { 
             heading ? (

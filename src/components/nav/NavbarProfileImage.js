@@ -1,40 +1,41 @@
 import { Link } from 'react-scroll';
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
-import { transparentize } from "@chakra-ui/theme-tools"
+import { Box, Flex, Image, Text, useStyles } from '@chakra-ui/react';
 
-const NavbarProfileImage = ({ profileImage, name }) => (
-  <Box
-    mb={4}
-  >
-    <Link
-      href="#about"
-      to="about"
-      duration={500}
-      smooth={true}
+const NavbarProfileImage = ({ profileImage, name }) => {
+  const styles = useStyles();
+  
+  return (
+    <Box
+      mb={[0,, 4]}
     >
-      <Flex
-        mb={2}
-        direction="column"
-        justify="center"
-        align="center"
+      <Link
+        href="#about"
+        to="about"
+        duration={500}
+        smooth={true}
       >
-        <Image
-          borderRadius="full"
-          boxSize="200px"
-          border="4px"
-          borderColor={transparentize("white", 0.3)}
-          src={profileImage}
-          alt={name}
-        />
-        <Text
-          fontSize="4xl"
-          color="white"
+        <Flex
+          mb={[0,, 2]}
+          direction={["row",, "column"]}
+          justify="center"
+          align="center"
         >
-          {name}
-        </Text>
-      </Flex>
-    </Link>
-  </Box>
-);
+          <Image
+            src={profileImage}
+            alt={name}
+            __css={styles.image}
+          />
+          <Text
+            fontSize={["xl",, "4xl"]}
+            ml={[2,, 0]}
+            color="white"
+          >
+            {name}
+          </Text>
+        </Flex>
+      </Link>
+    </Box>
+  );
+  }
 
 export default NavbarProfileImage;

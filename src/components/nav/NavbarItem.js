@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
-import { Flex, Icon, Text } from '@chakra-ui/react';
-import { BiRightArrow } from 'react-icons/bi';
+import { Flex, Text } from '@chakra-ui/react';
+import { transparentize } from "@chakra-ui/theme-tools";
 
 const NavbarItem = ({ 
   children, 
@@ -19,20 +19,10 @@ const NavbarItem = ({
       <Flex
         alignItems="center"
       >
-        {
-          active ? (
-            <Icon
-              color="white"
-              as={BiRightArrow}
-              mr={2}
-            />
-          ) : null
-        }
-        
         <Text 
           fontSize="xl" 
           display="block"
-          color="white"
+          color={active ? "white" : transparentize("white", 0.5)}
           {...rest}
         >
           {children}

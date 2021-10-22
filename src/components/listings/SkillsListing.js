@@ -1,4 +1,4 @@
-import { HStack, Text, Heading, VStack, Wrap } from '@chakra-ui/react';
+import { HStack, Text, Heading, VStack, Wrap, SimpleGrid } from '@chakra-ui/react';
 import { IconElement } from 'tools/icons';
 
 const SkillsListing = ({ languages, libraries, workflow }) =>
@@ -46,40 +46,46 @@ const SkillsListing = ({ languages, libraries, workflow }) =>
     <VStack 
       alignItems="flex-start"
       spacing={12}
+      w="100%"
     >
       <VStack
         alignItems="flex-start"
         spacing={6}
+        w="100%"
       >
         <Heading>Languages</Heading>
-        <Wrap 
+        <SimpleGrid
+          w="100%"
+          minChildWidth="100px"
           as="ul"
           listStyleType="none"
-          wrap="wrap"
           spacing={6}
         >
           {softwareList(languages)}
-        </Wrap>
+        </SimpleGrid>
       </VStack>
       
       <VStack
         alignItems="flex-start"
         spacing={6}
+        w="100%"
       >
         <Heading>Libraries</Heading>
-        <Wrap 
+        <SimpleGrid
+          //w="100%"
+          minChildWidth="100px"
           as="ul"
           listStyleType="none"
-          wrap="wrap"
-          spacing={4}
+          spacing={6}
         >
           {softwareList(libraries)}
-        </Wrap>
+        </SimpleGrid>
       </VStack>
 
       <VStack
         alignItems="flex-start"
         spacing={6}
+        w="100%"
       >
         <Heading>Workflow</Heading>
         <VStack 

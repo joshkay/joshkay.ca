@@ -6,19 +6,20 @@ const NavbarContainer = forwardRef(({ children, ...props }, ref) => {
     <Flex
       ref={ref}
       as="nav"
-      align="center"
+      alignItems="center"
       justify="flex-start"
       position="fixed"
-      flexDirection="column"
-      top={0}
-      left={0}
-      w={300}
-      height="100%"
-      mb={8}
-      p={8}
+      flexDirection={["row",, "column"]}
+      top={[0]}
+      left={[0]}
+      w={["100%",, 300]}
+      height={["auto",, "100%"]}
+      mb={[0,, 8]}
+      p={[2,, 8]}
       backgroundColor="primary"
       overflowY="auto"
       {...props}
+      zIndex={1}
     >
       {children}
     </Flex>

@@ -2,6 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 import Button from 'theme/components/button';
 import Timeline from 'theme/components/timeline';
 import PortfolioListing from 'theme/components/portfolioListing';
+import Navbar from 'theme/components/navbar';
 
 const theme = extendTheme({
   colors: {
@@ -23,7 +24,8 @@ const theme = extendTheme({
   components: {
     Button,
     Timeline,
-    PortfolioListing
+    PortfolioListing,
+    Navbar
   }
 });
 
