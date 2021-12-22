@@ -10,6 +10,12 @@ const Navbar = {
       borderColor: transparentize("white", 0.3),
       borderRadius: "full"
     },
+    logo: {
+      position: "absolute",
+      top: ["30px",, "150px"],
+      left: ["13px",, "65px"],
+      width: ["5px",, "30px"],
+    }
   }),
   variants: {
     

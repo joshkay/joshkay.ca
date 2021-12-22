@@ -92,6 +92,7 @@ const Navbar = ({
           >
             <NavbarProfileImage 
               profileImage={profileImage}
+              logoImage={logoImage}
               name={name}
             />
             <NavbarToggle

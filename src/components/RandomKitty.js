@@ -10,6 +10,7 @@ const RandomKitty = ({
   const [loadingCachedImage, setLoadingCachedImage] = useState(null);
   const [displayedImage, setDisplayedImage] = useState(null);
   const [cachedImage, setCachedImage] = useState(null);
+  const [imageError, setImageError] = useState(false);
   
   const fetchCats = async () =>
   {
@@ -20,15 +21,22 @@ const RandomKitty = ({
 
     setLoadingImage(true);
 
-    const { data } = await axios.get(
-      'https://api.thecatapi.com/v1/images/search?limit=1'
-    );
-
-    const url = data && data.length > 0 && data[0] && data[0].url ? data[0].url : null;
-
-    if (url)
+    try 
     {
-      setDisplayedImage(data[0].url);
+      const { data } = await axios.get(
+        'https://api.thecatapi.com/v1/images/search?limit=1'
+      );
+  
+      const url = data && data.length > 0 && data[0] && data[0].url ? data[0].url : null;
+  
+      if (url)
+      {
+        setDisplayedImage(data[0].url);
+      }
+    }
+    catch (err)
+    {
+      setImageError(true);
     }
   };
 
@@ -36,6 +44,11 @@ const RandomKitty = ({
     fetchCats();
   }, []);
 
+  if (imageError)
+  {
+    return null;
+  }
+  
   return (
     <Flex
       borderRadius="full"

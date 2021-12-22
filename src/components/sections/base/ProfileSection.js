@@ -30,7 +30,10 @@ const ProfileSection = ({
   return (
     <Waypoint
       onEnter={handleWaypointEnter}
-      onLeave={handleWaypointLeave}>
+      onLeave={handleWaypointLeave}
+      topOffset="500px"
+      bottomOffset="500px"
+    >
       <Flex
         minHeight="100vh"
         position="relative"
@@ -48,7 +51,8 @@ const ProfileSection = ({
             heading ? (
               <Heading 
                 as="h2" 
-                size="2xl" 
+                size="2xl"
+                fontWeight={499}
                 mb={12}
               >
                 {heading}

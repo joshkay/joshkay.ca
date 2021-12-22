@@ -51,7 +51,7 @@ const IndexPage = () =>
   {
     if (visibleSections !== undefined)
     {
-      for (let i = 0; i < visibleSections.length; i++)
+      for (let i = visibleSections.length - 1; i >= 0; i--)
       {
         const id = visibleSections[i];
         if (id !== undefined)

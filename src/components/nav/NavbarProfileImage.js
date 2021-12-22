@@ -1,7 +1,11 @@
 import { Link } from 'react-scroll';
 import { Box, Flex, Image, Text, useStyles } from '@chakra-ui/react';
 
-const NavbarProfileImage = ({ profileImage, name }) => {
+const NavbarProfileImage = ({ 
+  profileImage,
+  logoImage, 
+  name 
+}) => {
   const styles = useStyles();
   
   return (
@@ -19,11 +23,17 @@ const NavbarProfileImage = ({ profileImage, name }) => {
           direction={["row",, "column"]}
           justify="center"
           align="center"
+          position="relative"
         >
           <Image
             src={profileImage}
             alt={name}
             __css={styles.image}
+          />
+          <Image
+            src={logoImage}
+            alt="Logo"
+            __css={styles.logo}
           />
           <Text
             fontSize={["xl",, "4xl"]}

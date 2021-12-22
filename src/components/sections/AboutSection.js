@@ -41,7 +41,7 @@ const AboutSection = ({
               </Box>
               <Text color="primary">{lastName}</Text>
             </Box>
-            <Box ml={4}>
+            <Box ml={4} fontWeight={499}>
               🍕
             </Box>
           </Box>

@@ -15,29 +15,29 @@
   "author": "Josh Kay",
   "license": "ISC",
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.15",
-    "@chakra-ui/react": "^1.6.7",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@fontsource/open-sans": "^4.5.0",
+    "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/react": "^1.7.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@fontsource/open-sans": "^4.5.2",
     "@fontsource/raleway": "^4.5.0",
-    "axios": "^0.21.1",
-    "framer-motion": "^4.1.17",
-    "moralis": "^0.0.98",
-    "next": "^11.1.1",
+    "axios": "^0.24.0",
+    "framer-motion": "^5.5.5",
+    "moralis": "^0.0.176",
+    "next": "^12.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-recaptcha": "^2.1.0",
-    "react-icons": "^4.2.0",
+    "react-icons": "^4.3.1",
     "react-inlinesvg": "^2.3.0",
-    "react-scroll": "^1.8.3",
+    "react-scroll": "^1.8.4",
     "react-waypoint": "^10.1.0",
     "url": "^0.11.0",
-    "validator": "^13.6.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.1",
-    "eslint-plugin-import": "^2.24.2"
+    "eslint": "8.5.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-plugin-import": "^2.25.3"
   }
 }

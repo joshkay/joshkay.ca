@@ -34,22 +34,6 @@
       ],
       "items": [
         {
-          "name": "Music Box",
-          "image": "images/portfolio/musicbox/main.png",
-          "description": "A simple way to listen to music at home or on the go. Fully responsive design makes it easy to use on mobile.",
-          "tools":
-          [
-            "React",
-            "Firebase"          
-          ],
-          "githubUrl": "https://github.com/joshkay/musicbox",
-          "siteUrl": "https://musicbox-joshkay.firebaseapp.com/",
-          "sections": 
-          [
-            "Web Dev"
-          ]
-        },
-        {
           "name": "UE4.14 Contribution",
           "image": "images/portfolio/ue4contribution/main.png",
           "description": "Contributed to Unreal Engine 4.14 by fixing a bug that caused spectator view to fail to funciton properly.",
@@ -63,50 +47,6 @@
           "sections": 
           [
             "Game Dev"
-          ]
-        },
-        {
-          "name": "Puck Luck",
-          "image": "images/portfolio/puckluck/main.png",
-          "description": "NHL playoff fantasy hockey app. Currently being used to display stats for my family pool.",
-          "tools":
-          [
-            "React"
-          ],
-          "githubUrl": "https://github.com/joshkay/puckluck",
-          "siteUrl": "https://puckluck.bet/",
-          "sections": 
-          [
-            "Web Dev"
-          ]
-        },
-        {
-          "name": "Co-Op Shop",
-          "image": "images/portfolio/coopshop/main.png",
-          "description": "Shared Real-time Grocery List.",
-          "tools":
-          [
-            "React"
-          ],
-          "githubUrl": "https://github.com/joshkay/co-op-shop",
-          "siteUrl": "https://co-op-shop.herokuapp.com/",
-          "sections": 
-          [
-            "Web Dev"
-          ]
-        },
-        {
-          "name": "Twinkly Home Assistant Script",
-          "description": "Data center connectivity.",
-          "githubUrl": "https://github.com/joshkay/home-assistant-twinkly",
-          "tools":
-          [
-            "Python",
-            "Home Assistant"
-          ],
-          "sections": 
-          [
-            "Home Automation"
           ]
         },
         {
@@ -133,6 +73,66 @@
           "sections": 
           [
             "Web Dev"
+          ]
+        },
+        {
+          "name": "Puck Luck",
+          "image": "images/portfolio/puckluck/main.png",
+          "description": "NHL playoff fantasy hockey app. Currently being used to display stats for my family pool.",
+          "tools":
+          [
+            "React"
+          ],
+          "githubUrl": "https://github.com/joshkay/puckluck",
+          "siteUrl": "https://puckluck.bet/",
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "Music Box",
+          "image": "images/portfolio/musicbox/main.png",
+          "description": "A simple way to listen to music at home or on the go. Fully responsive design makes it easy to use on mobile.",
+          "tools":
+          [
+            "React",
+            "Firebase"          
+          ],
+          "githubUrl": "https://github.com/joshkay/musicbox",
+          "siteUrl": "https://musicbox-joshkay.firebaseapp.com/",
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "Co-Op Shop",
+          "image": "images/portfolio/coopshop/main.png",
+          "description": "Shared Real-time Grocery List.",
+          "tools":
+          [
+            "React"
+          ],
+          "githubUrl": "https://github.com/joshkay/co-op-shop",
+          "siteUrl": "https://co-op-shop.herokuapp.com/",
+          "sections": 
+          [
+            "Web Dev"
+          ]
+        },
+        {
+          "name": "Twinkly Home Assistant Script",
+          "description": "TODO",
+          "githubUrl": "https://github.com/joshkay/home-assistant-twinkly",
+          "tools":
+          [
+            "Python",
+            "Home Assistant"
+          ],
+          "sections": 
+          [
+            "Home Automation"
           ]
         },
         {
