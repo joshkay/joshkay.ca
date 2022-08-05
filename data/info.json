@@ -51,11 +51,11 @@
         },
         {
           "name": "Phoenix",
-          "image": "images/portfolio/phoenix/main.png",
-          "description": "Custom built project management software.",
+          "description": "Phoenix is the custom built digital platform used by Apotex to collaborate and execute Capital Projects. The platform permits oversight and control of capital resources, including financial reporting capabilities, forecasting and budgeting analytics. It is software built to mirror the real-life processes and workflows of Apotex Capital Projects and Engineering. Phoenix pulls SAP & Ariba data (using ETL) and displays the relevant project financial information.",
           "tools":
           [
-            "React"
+            "React",
+            "Node.js"
           ],
           "sections": 
           [
@@ -64,7 +64,7 @@
         },
         {
           "name": "eTRACS",
-          "image": "images/portfolio/etracs/main.png",
+          "image": "images/portfolio/etracs/datacenter.png",
           "description": "Data center connectivity management software.",
           "tools":
           [
@@ -81,7 +81,9 @@
           "description": "NHL playoff fantasy hockey app. Currently being used to display stats for my family pool.",
           "tools":
           [
-            "React"
+            "React",
+            "Next.js",
+            "Vercel"
           ],
           "githubUrl": "https://github.com/joshkay/puckluck",
           "siteUrl": "https://puckluck.bet/",
@@ -112,7 +114,8 @@
           "description": "Shared Real-time Grocery List.",
           "tools":
           [
-            "React"
+            "React",
+            "Typescript"
           ],
           "githubUrl": "https://github.com/joshkay/co-op-shop",
           "siteUrl": "https://co-op-shop.herokuapp.com/",
@@ -122,8 +125,8 @@
           ]
         },
         {
-          "name": "Twinkly Home Assistant Script",
-          "description": "TODO",
+          "name": "Twinkly Home Assistant Script 🎄",
+          "description": "Custom python script for home assistant to turn on/off my christmas lights!",
           "githubUrl": "https://github.com/joshkay/home-assistant-twinkly",
           "tools":
           [
@@ -174,9 +177,15 @@
       "items": [
         {
           "title": "Owner",
+          "company": "Full Stack Software Solutions Inc.",
+          "description": "Consulting and custom software development.",
+          "dates": "July 2022 - Present"
+        },
+        {
+          "title": "Owner",
           "company": "Full Stack Software Solutions",
           "description": "Consulting and custom software development.",
-          "dates": "Feb 2020 - Present"
+          "dates": "Feb 2020 - July 2022"
         },
         {
           "title": "Software Developer (Contractor)",
@@ -187,7 +196,7 @@
           ],
           "dates": [
             "May 2011 - Dec 2012", 
-            "Apr 2018 - Present"
+            "Apr 2018 - Apr 2020"
           ]
         },
         {
@@ -257,7 +266,11 @@
           "Python"
         ],
         "libraries": [
-          "React"
+          "React",
+          "Next.js",
+          ".NET",
+          "MUI",
+          "Chakra"
         ],
         "workflow": [
           "Test Driven Development",

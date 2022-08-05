@@ -12,9 +12,10 @@ const Navbar = {
     },
     logo: {
       position: "absolute",
-      top: ["30px",, "150px"],
-      left: ["13px",, "65px"],
-      width: ["5px",, "30px"],
+      top: ["29px",, "150px"],
+      left: ["22px",, "110px"],
+      width: ["3px",, "15px"],
+      opacity: '40%'
     }
   }),
   variants: {

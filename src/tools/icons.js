@@ -15,10 +15,10 @@ import {
   SiCsharp,
   SiCplusplus,
   SiFirebase,
-  SiUnrealengine,
-  SiDotNet
+  SiUnrealengine
  } from "react-icons/si";
 import {
+  Flex,
   Icon,
   Image
 } from '@chakra-ui/react';
@@ -51,8 +51,12 @@ const ICON_ELEMENTS = {
   'Github': FaGithub,
   'Firebase': SiFirebase,
   'Unreal Engine': SiUnrealengine,
-  ".NET": SiDotNet,
+  //".NET": SiDotNet,
 }
+
+const SVG_ELEMENTS = [
+  'Home Assistant',
+]
 
 const IconElement = forwardRef(({ name, ...props }, ref) =>
 {
@@ -60,29 +64,35 @@ const IconElement = forwardRef(({ name, ...props }, ref) =>
   if (IconComponent)
   {
     return (
-      <div
-        ref={ref} 
+      <Flex
+        ref={ref}
       >
         <Icon
           as={IconComponent} 
           {...props} 
         />
-      </div>
+      </Flex>
     );
   }
 
-  return (
-    <div
-      ref={ref} 
-    >
-      <Icon
-        as={SVGElement}
-        name={name}
-        {...props} 
-      />
-    </div>
-  );
+  if (SVG_ELEMENTS.includes(name))
+  {
+    return (
+      <Flex
+        ref={ref} 
+      >
+        <Icon
+          as={SVGElement}
+          name={name}
+          {...props} 
+        />
+      </Flex>
+    );
+  }
+  
+  return null;
 });
+
 IconElement.displayName = 'IconElement';
 
 export { IconElement };

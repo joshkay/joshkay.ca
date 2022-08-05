@@ -9,6 +9,8 @@ const SkillsListing = ({ languages, libraries, workflow }) =>
       key={index}
       as="li"
       spacing={4}
+      p={4}
+      w="120px"
     >
       <IconElement 
         w={24} 
@@ -54,15 +56,13 @@ const SkillsListing = ({ languages, libraries, workflow }) =>
         w="100%"
       >
         <Heading>Languages</Heading>
-        <SimpleGrid
+        <HStack
           w="100%"
-          minChildWidth="100px"
           as="ul"
-          listStyleType="none"
-          spacing={6}
+          wrap="wrap"
         >
           {softwareList(languages)}
-        </SimpleGrid>
+        </HStack>
       </VStack>
       
       <VStack
@@ -71,15 +71,13 @@ const SkillsListing = ({ languages, libraries, workflow }) =>
         w="100%"
       >
         <Heading>Libraries</Heading>
-        <SimpleGrid
-          //w="100%"
-          minChildWidth="100px"
+        <HStack
+          w="100%"
           as="ul"
-          listStyleType="none"
-          spacing={6}
+          wrap="wrap"
         >
           {softwareList(libraries)}
-        </SimpleGrid>
+        </HStack>
       </VStack>
 
       <VStack

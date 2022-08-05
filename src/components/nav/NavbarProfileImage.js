@@ -46,6 +46,6 @@ const NavbarProfileImage = ({
       </Link>
     </Box>
   );
-  }
+}
 
 export default NavbarProfileImage;

@@ -22,8 +22,8 @@ const DefaultLayout = ({
     </Head>
 
     <Navbar 
-      name={name} 
-      logoImage={logoImage} 
+      name={name}
+      logoImage={logoImage}
       profileImage={profileImage}
       sections={sections}
       focusedSection={focusedSection} 

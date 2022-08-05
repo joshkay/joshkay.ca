@@ -2,7 +2,7 @@ const PortfolioListing = {
   parts: ["base", "image"],
   baseStyle: ({ colorMode }) => ({
     base: {
-      direction: "column",
+      minWidth: "200px",
       borderRadius: 10,
       bgColor: colorMode === "dark" ? "gray.700" : "gray.200",
       padding: 4,

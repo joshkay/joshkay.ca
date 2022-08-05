@@ -13,7 +13,7 @@ const NavbarItem = ({
     <Link 
       href={`#${to}`}
       to={to}
-      duration={500}
+      duration={1000}
       smooth={true}
     >
       <Flex
