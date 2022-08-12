@@ -9,5 +9,8 @@
         "moduleDirectory": ["node_modules", "src/"]
       }
     }
+  },
+  "rules": {
+    "import/no-named-as-default": 0
   }
 }
