@@ -9,7 +9,7 @@
     "build": "next build",
     "export": "next export",
     "lint": "next lint",
-    "deploy": "cd lambdas && bash build.sh joshkay-ca_contact && cd .. && npm run build && npm run export && aws s3 sync out/ s3://joshkay.ca"
+    "deploy": "cd lambdas && bash build.sh joshkay-ca_contact && cd .. && npm run build && npm run export && aws s3 sync out/ s3://joshkay.ca && aws cloudfront create-invalidation --distribution-id E3AJUIG4Q7CHBG --paths \"/*\""
   },
   "keywords": [],
   "author": "Josh Kay",
