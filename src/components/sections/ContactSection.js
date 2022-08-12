@@ -299,6 +299,12 @@ const ContactSection = () =>
             ref={reCaptchaRef}
             sitekey={publicRuntimeConfig.RECAPTCHA_SITE_KEY}
             onChange={handleCaptchaChange}
+            style={{
+              width: 302,
+              height: 77,
+              borderRadius: 3,
+              overflow: "hidden",
+            }}
           />
           <FormErrorMessage>{errors.captcha}</FormErrorMessage>
         </FormControl>
