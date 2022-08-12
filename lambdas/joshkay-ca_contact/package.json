@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   }
 }
